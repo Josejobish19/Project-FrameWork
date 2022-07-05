@@ -5,10 +5,49 @@
     <classes>
       <class name="com.mobileTest.LoginTest">
         <methods>
-          <include name="launch"/>
-          <include name="testURL"/>
+          <include name="launchChromeBrowser"/>
+          <include name="setup"/>
+          <include name="Close"/>
+          <include name="validateValidLogin"/>
+          <include name="validateURL"/>
         </methods>
       </class> <!-- com.mobileTest.LoginTest -->
+      <class name="com.mobileTest.ClientTest">
+        <methods>
+          <include name="validateClientSerchResult"/>
+          <include name="validateClientfields"/>
+          <include name="validateMainNavigationFields"/>
+          <include name="validateHomePageFeilds"/>
+          <include name="validateURL"/>
+          <include name="validateClientDetails1"/>
+          <include name="validateClientpage"/>
+          <include name="launchChromeBrowser"/>
+          <include name="validateEmptySMS"/>
+          <include name="validateSMS"/>
+          <include name="validateValidLogin"/>
+          <include name="validateUserDetailsDisplayed"/>
+          <include name="validatevalidEmailidMessage"/>
+          <include name="validateInvalidEmailidMessage"/>
+          <include name="Close"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.mobileTest.ClientTest -->
+      <class name="com.mobileTest.HomeTest">
+        <methods>
+          <include name="launchChromeBrowser"/>
+          <include name="validateEmptySMS"/>
+          <include name="validateMainNavigationFields"/>
+          <include name="validateHomePageFeilds"/>
+          <include name="validateSMS"/>
+          <include name="validateValidLogin"/>
+          <include name="validateUserDetailsDisplayed"/>
+          <include name="validateURL"/>
+          <include name="validatevalidEmailidMessage"/>
+          <include name="validateInvalidEmailidMessage"/>
+          <include name="Close"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.mobileTest.HomeTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

@@ -4,15 +4,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import webActionHelpers.ActionHelper;
 import webActionHelpers.AlertFrameWindowHelper;
 import webActionHelpers.MouseAction;
 import webActionHelpers.SendkeysActionHelper;
 
-public class MobileHomePage  {
+public class MobileHomePage {
 	
-
 
 
 
@@ -78,11 +76,39 @@ public class MobileHomePage  {
 	WebElement EventdeleteSelect;
 	@FindBy(xpath = "//button[@data-bb-handler=\"confirm\"]")
 	WebElement EventdeleteConfirm;
+	@FindBy(xpath = "//li[contains(.,'MAIN NAVIGATION')]")
+	WebElement MAINNAVIGATION;
+	@FindBy(xpath = "//span[contains(.,'Home')]")
+	WebElement Home;
+	@FindBy(xpath = "//span[contains(.,'Reparations')]")
+	WebElement Reparations;
+	@FindBy(xpath = "//span[contains(.,'Clients')]")
+	WebElement Clients;
+	@FindBy(xpath = "//span[contains(.,'Stock/Inventory')]")
+	WebElement Inventory;
+	@FindBy(xpath = "//span[contains(.,'POS')]")
+	WebElement POS;
+	@FindBy(xpath = "//span[contains(.,'Purchases')]")
+	WebElement Purchases;
+	@FindBy(xpath = "//span[contains(.,'Reports')]")
+	WebElement Reports;
+	@FindBy(xpath = "//span[contains(.,'Activity Log')]")
+	WebElement ActivityLog;
+	@FindBy(xpath = "//span[contains(.,'System Setting')]")
+	WebElement SystemSetting;
+	@FindBy(xpath = "//span[contains(.,'Joe Jacobs')]")
+	WebElement joelogoutDrop;
+	@FindBy(xpath = "//input[@name=\"identity\"]")
+	WebElement username;
+	@FindBy(xpath = "//input[@name=\"password\"]")
+	WebElement password;
+	@FindBy(xpath = "//input[@name=\"submit\"]")
+	WebElement passSubmit;
 	
 	
 	public MobileHomePage(WebDriver driver)
 	{
-		this.driver = driver;
+	this.driver = driver;
 		PageFactory.initElements(driver,this);
 	}
 
@@ -92,9 +118,9 @@ public class MobileHomePage  {
 		return ab.getPageTitle(driver);
 	}
 	
-	public String isUserDetailsDisplayed()
+	public boolean isUserDetailsDisplayed()
 	{	
-		 return userDetail.getText();
+		 return joelogoutDrop.isDisplayed();
 		
 	}
 	public String isUseronlineStatusDisplayed()
@@ -204,4 +230,50 @@ public class MobileHomePage  {
 		ac.mouseClick(driver, EventdeleteConfirm);
 	}
 	
+	public boolean isMAINNAVIGATIONDisplayed()
+	{
+		return MAINNAVIGATION.isDisplayed();
+	}
+	public boolean isHomeDisplayed()
+	{
+		return Home.isDisplayed();
+	}
+	public boolean isReparationsDisplayed()
+	{
+		return Reparations.isDisplayed();
+	}
+	public boolean isClientsDisplayed()
+	{
+		return  Clients.isDisplayed();
+	}
+	
+	public boolean isInventoryDisplayed()
+	{
+		return  Inventory.isDisplayed();
+	}
+	public boolean isPOSDisplayed()
+	{
+		return  POS.isDisplayed();
+	}
+	public boolean isPurchasesDisplayed()
+	{
+		return  Purchases.isDisplayed();
+	}
+	public boolean isActivityLogDisplayed()
+	{
+		return   ActivityLog.isDisplayed();
+	}
+	public boolean isSystemSettingLogDisplayed()
+	{
+		return   SystemSetting.isDisplayed();
+	}
+	
+	public MobileHomePage login(String username1 , String pwd1)
+	{
+		ad.clearAndsendkeys(driver, username , username1);
+		ad.clearAndsendkeys(driver, password , pwd1);
+		ac.mouseClick(driver, passSubmit);
+		return new MobileHomePage(driver);
+		
+	}
 }

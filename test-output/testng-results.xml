@@ -1,47 +1,177 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="1" total="11" passed="9" failed="1" skipped="0">
+<testng-results ignored="4" total="18" passed="11" failed="3" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-06-30T23:50:00 IST" name="Default suite" finished-at="2022-06-30T23:50:43 IST" duration-ms="43379">
+  <suite started-at="2022-07-04T15:44:19 IST" name="Default suite" finished-at="2022-07-04T15:45:26 IST" duration-ms="66570">
     <groups>
     </groups>
-    <test started-at="2022-06-30T23:50:00 IST" name="Default test" finished-at="2022-06-30T23:50:43 IST" duration-ms="43379">
-      <class name="com.mobileTest.HomeTest">
-        <test-method is-config="true" signature="launch()[pri:0, instance:com.mobileTest.HomeTest@5b247367]" started-at="2022-06-30T23:50:00 IST" name="launch" finished-at="2022-06-30T23:50:29 IST" duration-ms="29056" status="PASS">
+    <test started-at="2022-07-04T15:44:19 IST" name="Default test" finished-at="2022-07-04T15:45:26 IST" duration-ms="66570">
+      <class name="com.mobileTest.ClientTest">
+        <test-method is-config="true" signature="launchChromeBrowser()[pri:0, instance:com.mobileTest.ClientTest@47e2e487]" started-at="2022-07-04T15:44:19 IST" name="launchChromeBrowser" finished-at="2022-07-04T15:44:49 IST" duration-ms="29978" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- launch -->
-        <test-method signature="validateURL()[pri:1, instance:com.mobileTest.HomeTest@5b247367]" started-at="2022-06-30T23:50:29 IST" name="validateURL" finished-at="2022-06-30T23:50:29 IST" duration-ms="53" status="PASS">
+        </test-method> <!-- launchChromeBrowser -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.mobileTest.ClientTest@47e2e487]" started-at="2022-07-04T15:44:49 IST" name="setup" finished-at="2022-07-04T15:44:50 IST" duration-ms="238" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="validateURL()[pri:1, instance:com.mobileTest.ClientTest@47e2e487]" started-at="2022-07-04T15:44:50 IST" name="validateURL" finished-at="2022-07-04T15:44:50 IST" duration-ms="28" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateURL -->
-        <test-method signature="validateareUsernameAndPasswordFieldsDisplayed()[pri:2, instance:com.mobileTest.HomeTest@5b247367]" started-at="2022-06-30T23:50:29 IST" name="validateareUsernameAndPasswordFieldsDisplayed" finished-at="2022-06-30T23:50:29 IST" duration-ms="291" status="PASS">
+        <test-method is-config="true" signature="Close()[pri:0, instance:com.mobileTest.ClientTest@47e2e487]" started-at="2022-07-04T15:44:50 IST" name="Close" finished-at="2022-07-04T15:44:50 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validateareUsernameAndPasswordFieldsDisplayed -->
-        <test-method signature="validateValidLogin()[pri:3, instance:com.mobileTest.HomeTest@5b247367]" started-at="2022-06-30T23:50:29 IST" name="validateValidLogin" finished-at="2022-06-30T23:50:37 IST" duration-ms="8066" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchElementException">
+        </test-method> <!-- Close -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.mobileTest.ClientTest@47e2e487]" started-at="2022-07-04T15:44:50 IST" name="setup" finished-at="2022-07-04T15:44:50 IST" duration-ms="4" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="validateValidLogin()[pri:3, instance:com.mobileTest.ClientTest@47e2e487]" started-at="2022-07-04T15:44:50 IST" name="validateValidLogin" finished-at="2022-07-04T15:44:59 IST" duration-ms="9271" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateValidLogin -->
+        <test-method is-config="true" signature="Close()[pri:0, instance:com.mobileTest.ClientTest@47e2e487]" started-at="2022-07-04T15:44:59 IST" name="Close" finished-at="2022-07-04T15:44:59 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Close -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.mobileTest.ClientTest@47e2e487]" started-at="2022-07-04T15:44:59 IST" name="setup" finished-at="2022-07-04T15:44:59 IST" duration-ms="4" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="validateUserDetailsDisplayed()[pri:4, instance:com.mobileTest.ClientTest@47e2e487]" started-at="2022-07-04T15:44:59 IST" name="validateUserDetailsDisplayed" finished-at="2022-07-04T15:44:59 IST" duration-ms="113" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateUserDetailsDisplayed -->
+        <test-method is-config="true" signature="Close()[pri:0, instance:com.mobileTest.ClientTest@47e2e487]" started-at="2022-07-04T15:44:59 IST" name="Close" finished-at="2022-07-04T15:44:59 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Close -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.mobileTest.ClientTest@47e2e487]" started-at="2022-07-04T15:44:59 IST" name="setup" finished-at="2022-07-04T15:44:59 IST" duration-ms="4" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="validateHomePageFeilds()[pri:5, instance:com.mobileTest.ClientTest@47e2e487]" started-at="2022-07-04T15:44:59 IST" name="validateHomePageFeilds" finished-at="2022-07-04T15:44:59 IST" duration-ms="455" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateHomePageFeilds -->
+        <test-method is-config="true" signature="Close()[pri:0, instance:com.mobileTest.ClientTest@47e2e487]" started-at="2022-07-04T15:44:59 IST" name="Close" finished-at="2022-07-04T15:44:59 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Close -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.mobileTest.ClientTest@47e2e487]" started-at="2022-07-04T15:44:59 IST" name="setup" finished-at="2022-07-04T15:45:00 IST" duration-ms="6" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="validateInvalidEmailidMessage()[pri:6, instance:com.mobileTest.ClientTest@47e2e487]" started-at="2022-07-04T15:45:00 IST" name="validateInvalidEmailidMessage" finished-at="2022-07-04T15:45:01 IST" duration-ms="1259" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateInvalidEmailidMessage -->
+        <test-method is-config="true" signature="Close()[pri:0, instance:com.mobileTest.ClientTest@47e2e487]" started-at="2022-07-04T15:45:01 IST" name="Close" finished-at="2022-07-04T15:45:01 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Close -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.mobileTest.ClientTest@47e2e487]" started-at="2022-07-04T15:45:01 IST" name="setup" finished-at="2022-07-04T15:45:01 IST" duration-ms="4" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="validatevalidEmailidMessage()[pri:7, instance:com.mobileTest.ClientTest@47e2e487]" started-at="2022-07-04T15:45:01 IST" name="validatevalidEmailidMessage" finished-at="2022-07-04T15:45:02 IST" duration-ms="1528" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validatevalidEmailidMessage -->
+        <test-method is-config="true" signature="Close()[pri:0, instance:com.mobileTest.ClientTest@47e2e487]" started-at="2022-07-04T15:45:02 IST" name="Close" finished-at="2022-07-04T15:45:02 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Close -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.mobileTest.ClientTest@47e2e487]" started-at="2022-07-04T15:45:02 IST" name="setup" finished-at="2022-07-04T15:45:02 IST" duration-ms="3" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="validateEmptySMS()[pri:8, instance:com.mobileTest.ClientTest@47e2e487]" started-at="2022-07-04T15:45:02 IST" name="validateEmptySMS" finished-at="2022-07-04T15:45:03 IST" duration-ms="754" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateEmptySMS -->
+        <test-method is-config="true" signature="Close()[pri:0, instance:com.mobileTest.ClientTest@47e2e487]" started-at="2022-07-04T15:45:03 IST" name="Close" finished-at="2022-07-04T15:45:03 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Close -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.mobileTest.ClientTest@47e2e487]" started-at="2022-07-04T15:45:03 IST" name="setup" finished-at="2022-07-04T15:45:03 IST" duration-ms="4" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="validateSMS()[pri:9, instance:com.mobileTest.ClientTest@47e2e487]" started-at="2022-07-04T15:45:03 IST" name="validateSMS" finished-at="2022-07-04T15:45:04 IST" duration-ms="1111" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateSMS -->
+        <test-method is-config="true" signature="Close()[pri:0, instance:com.mobileTest.ClientTest@47e2e487]" started-at="2022-07-04T15:45:04 IST" name="Close" finished-at="2022-07-04T15:45:04 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Close -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.mobileTest.ClientTest@47e2e487]" started-at="2022-07-04T15:45:04 IST" name="setup" finished-at="2022-07-04T15:45:04 IST" duration-ms="4" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="validateMainNavigationFields()[pri:12, instance:com.mobileTest.ClientTest@47e2e487]" started-at="2022-07-04T15:45:04 IST" name="validateMainNavigationFields" finished-at="2022-07-04T15:45:05 IST" duration-ms="523" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateMainNavigationFields -->
+        <test-method is-config="true" signature="Close()[pri:0, instance:com.mobileTest.ClientTest@47e2e487]" started-at="2022-07-04T15:45:05 IST" name="Close" finished-at="2022-07-04T15:45:05 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Close -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.mobileTest.ClientTest@47e2e487]" started-at="2022-07-04T15:45:05 IST" name="setup" finished-at="2022-07-04T15:45:05 IST" duration-ms="3" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="validateClientpage()[pri:13, instance:com.mobileTest.ClientTest@47e2e487]" started-at="2022-07-04T15:45:05 IST" name="validateClientpage" finished-at="2022-07-04T15:45:25 IST" duration-ms="19837" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateClientpage -->
+        <test-method is-config="true" signature="Close()[pri:0, instance:com.mobileTest.ClientTest@47e2e487]" started-at="2022-07-04T15:45:25 IST" name="Close" finished-at="2022-07-04T15:45:25 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Close -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.mobileTest.ClientTest@47e2e487]" started-at="2022-07-04T15:45:25 IST" name="setup" finished-at="2022-07-04T15:45:25 IST" duration-ms="3" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="validateClientfields()[pri:14, instance:com.mobileTest.ClientTest@47e2e487]" started-at="2022-07-04T15:45:25 IST" name="validateClientfields" finished-at="2022-07-04T15:45:25 IST" duration-ms="501" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateClientfields -->
+        <test-method is-config="true" signature="Close()[pri:0, instance:com.mobileTest.ClientTest@47e2e487]" started-at="2022-07-04T15:45:25 IST" name="Close" finished-at="2022-07-04T15:45:25 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Close -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.mobileTest.ClientTest@47e2e487]" started-at="2022-07-04T15:45:25 IST" name="setup" finished-at="2022-07-04T15:45:25 IST" duration-ms="3" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="validateClientDetails1()[pri:16, instance:com.mobileTest.ClientTest@47e2e487]" started-at="2022-07-04T15:45:25 IST" name="validateClientDetails1" finished-at="2022-07-04T15:45:25 IST" duration-ms="79" status="FAIL">
+          <exception class="org.openqa.selenium.InvalidSelectorException">
             <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//input[@name="remember"]"}
+              <![CDATA[invalid selector: Unable to locate an element with the xpath expression xpath("//*[@id="dynamic-table"]/tbody/tr/td[2] because of the following error:
+SyntaxError: Failed to execute 'evaluate' on 'Document': The string 'xpath("//*[@id="dynamic-table"]/tbody/tr/td[2]' is not a valid XPath expression.
   (Session info: chrome=103.0.5060.66)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+For documentation on this error, please visit: https://selenium.dev/exceptions/#invalid_selector_exception
 Build info: version: '4.1.4', revision: '535d840ee2'
 System info: host: 'JOSE', ip: '192.168.38.164', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [a915a54c146872ac99d97e51d5f8df76, findElement {using=xpath, value=//input[@name="remember"]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 103.0.5060.66, chrome: {chromedriverVersion: 102.0.5005.61 (0e59bcc00cc4..., userDataDir: C:\Users\Jose.T\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:62691}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:62691/devtoo..., se:cdpVersion: 103.0.5060.66, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: a915a54c146872ac99d97e51d5f8df76]]>
+Command: [7f5e7cd1cd2a4e51b6031194e5b16cf7, findElement {using=xpath, value=xpath("//*[@id="dynamic-table"]/tbody/tr/td[2]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 103.0.5060.66, chrome: {chromedriverVersion: 102.0.5005.61 (0e59bcc00cc4..., userDataDir: C:\Users\Jose.T\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:51569}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:51569/devtoo..., se:cdpVersion: 103.0.5060.66, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 7f5e7cd1cd2a4e51b6031194e5b16cf7]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@name="remember"]"}
+              <![CDATA[org.openqa.selenium.InvalidSelectorException: invalid selector: Unable to locate an element with the xpath expression xpath("//*[@id="dynamic-table"]/tbody/tr/td[2] because of the following error:
+SyntaxError: Failed to execute 'evaluate' on 'Document': The string 'xpath("//*[@id="dynamic-table"]/tbody/tr/td[2]' is not a valid XPath expression.
   (Session info: chrome=103.0.5060.66)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+For documentation on this error, please visit: https://selenium.dev/exceptions/#invalid_selector_exception
 Build info: version: '4.1.4', revision: '535d840ee2'
 System info: host: 'JOSE', ip: '192.168.38.164', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [a915a54c146872ac99d97e51d5f8df76, findElement {using=xpath, value=//input[@name="remember"]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 103.0.5060.66, chrome: {chromedriverVersion: 102.0.5005.61 (0e59bcc00cc4..., userDataDir: C:\Users\Jose.T\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:62691}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:62691/devtoo..., se:cdpVersion: 103.0.5060.66, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: a915a54c146872ac99d97e51d5f8df76
+Command: [7f5e7cd1cd2a4e51b6031194e5b16cf7, findElement {using=xpath, value=xpath("//*[@id="dynamic-table"]/tbody/tr/td[2]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 103.0.5060.66, chrome: {chromedriverVersion: 102.0.5005.61 (0e59bcc00cc4..., userDataDir: C:\Users\Jose.T\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:51569}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:51569/devtoo..., se:cdpVersion: 103.0.5060.66, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 7f5e7cd1cd2a4e51b6031194e5b16cf7
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -60,9 +190,9 @@ at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:3
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:377)
 at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
 at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
-at jdk.proxy2/jdk.proxy2.$Proxy10.getText(Unknown Source)
-at com.mobileService.LoginPage.loginRemember(LoginPage.java:65)
-at com.mobileTest.LoginTest.validateValidLogin(LoginTest.java:46)
+at jdk.proxy2/jdk.proxy2.$Proxy17.getText(Unknown Source)
+at com.mobileService.MobileClient.ClientsearchResultText(MobileClient.java:103)
+at com.mobileTest.ClientTest.validateClientDetails1(ClientTest.java:75)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -93,39 +223,163 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- org.openqa.selenium.InvalidSelectorException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validateValidLogin -->
-        <test-method signature="validateHomePageFeilds()[pri:5, instance:com.mobileTest.HomeTest@5b247367]" started-at="2022-06-30T23:50:37 IST" name="validateHomePageFeilds" finished-at="2022-06-30T23:50:38 IST" duration-ms="998" status="PASS">
+        </test-method> <!-- validateClientDetails1 -->
+        <test-method is-config="true" signature="Close()[pri:0, instance:com.mobileTest.ClientTest@47e2e487]" started-at="2022-07-04T15:45:25 IST" name="Close" finished-at="2022-07-04T15:45:25 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validateHomePageFeilds -->
-        <test-method signature="validateInvalidEmailidMessage()[pri:6, instance:com.mobileTest.HomeTest@5b247367]" started-at="2022-06-30T23:50:38 IST" name="validateInvalidEmailidMessage" finished-at="2022-06-30T23:50:40 IST" duration-ms="1516" status="PASS">
+        </test-method> <!-- Close -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.mobileTest.ClientTest@47e2e487]" started-at="2022-07-04T15:45:25 IST" name="setup" finished-at="2022-07-04T15:45:25 IST" duration-ms="3" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validateInvalidEmailidMessage -->
-        <test-method signature="validatevalidEmailidMessage()[pri:7, instance:com.mobileTest.HomeTest@5b247367]" started-at="2022-06-30T23:50:40 IST" name="validatevalidEmailidMessage" finished-at="2022-06-30T23:50:41 IST" duration-ms="844" status="PASS">
+        </test-method> <!-- setup -->
+        <test-method signature="validateClientSerchResult()[pri:17, instance:com.mobileTest.ClientTest@47e2e487]" started-at="2022-07-04T15:45:25 IST" name="validateClientSerchResult" finished-at="2022-07-04T15:45:25 IST" duration-ms="194" status="FAIL">
+          <exception class="org.openqa.selenium.InvalidSelectorException">
+            <message>
+              <![CDATA[invalid selector: Unable to locate an element with the xpath expression xpath("//*[@id="dynamic-table"]/tbody/tr/td[2] because of the following error:
+SyntaxError: Failed to execute 'evaluate' on 'Document': The string 'xpath("//*[@id="dynamic-table"]/tbody/tr/td[2]' is not a valid XPath expression.
+  (Session info: chrome=103.0.5060.66)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#invalid_selector_exception
+Build info: version: '4.1.4', revision: '535d840ee2'
+System info: host: 'JOSE', ip: '192.168.38.164', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [7f5e7cd1cd2a4e51b6031194e5b16cf7, findElement {using=xpath, value=xpath("//*[@id="dynamic-table"]/tbody/tr/td[2]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 103.0.5060.66, chrome: {chromedriverVersion: 102.0.5005.61 (0e59bcc00cc4..., userDataDir: C:\Users\Jose.T\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:51569}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:51569/devtoo..., se:cdpVersion: 103.0.5060.66, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 7f5e7cd1cd2a4e51b6031194e5b16cf7]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.InvalidSelectorException: invalid selector: Unable to locate an element with the xpath expression xpath("//*[@id="dynamic-table"]/tbody/tr/td[2] because of the following error:
+SyntaxError: Failed to execute 'evaluate' on 'Document': The string 'xpath("//*[@id="dynamic-table"]/tbody/tr/td[2]' is not a valid XPath expression.
+  (Session info: chrome=103.0.5060.66)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#invalid_selector_exception
+Build info: version: '4.1.4', revision: '535d840ee2'
+System info: host: 'JOSE', ip: '192.168.38.164', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [7f5e7cd1cd2a4e51b6031194e5b16cf7, findElement {using=xpath, value=xpath("//*[@id="dynamic-table"]/tbody/tr/td[2]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 103.0.5060.66, chrome: {chromedriverVersion: 102.0.5005.61 (0e59bcc00cc4..., userDataDir: C:\Users\Jose.T\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:51569}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:51569/devtoo..., se:cdpVersion: 103.0.5060.66, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 7f5e7cd1cd2a4e51b6031194e5b16cf7
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:567)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:385)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:377)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+at jdk.proxy2/jdk.proxy2.$Proxy17.getText(Unknown Source)
+at com.mobileService.MobileClient.ClientsearchResultText(MobileClient.java:103)
+at com.mobileTest.ClientTest.validateClientSerchResult(ClientTest.java:81)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.InvalidSelectorException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validatevalidEmailidMessage -->
-        <test-method signature="validateEmptySMS()[pri:8, instance:com.mobileTest.HomeTest@5b247367]" started-at="2022-06-30T23:50:41 IST" name="validateEmptySMS" finished-at="2022-06-30T23:50:41 IST" duration-ms="649" status="PASS">
+        </test-method> <!-- validateClientSerchResult -->
+        <test-method is-config="true" signature="Close()[pri:0, instance:com.mobileTest.ClientTest@47e2e487]" started-at="2022-07-04T15:45:25 IST" name="Close" finished-at="2022-07-04T15:45:25 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validateEmptySMS -->
-        <test-method signature="validateSMS()[pri:9, instance:com.mobileTest.HomeTest@5b247367]" started-at="2022-06-30T23:50:41 IST" name="validateSMS" finished-at="2022-06-30T23:50:42 IST" duration-ms="785" status="PASS">
+        </test-method> <!-- Close -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.mobileTest.ClientTest@47e2e487]" started-at="2022-07-04T15:45:25 IST" name="setup" finished-at="2022-07-04T15:45:25 IST" duration-ms="7" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validateSMS -->
-        <test-method signature="validatadateEventMarker()[pri:10, instance:com.mobileTest.HomeTest@5b247367]" started-at="2022-06-30T23:50:42 IST" name="validatadateEventMarker" finished-at="2022-06-30T23:50:43 IST" duration-ms="510" status="PASS">
+        </test-method> <!-- setup -->
+        <test-method signature="validateClientActionbuttons()[pri:18, instance:com.mobileTest.ClientTest@47e2e487]" started-at="2022-07-04T15:45:25 IST" name="validateClientActionbuttons" finished-at="2022-07-04T15:45:26 IST" duration-ms="511" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The following asserts failed:
+expected [true] but found [false],
+expected [true] but found [false],
+expected [true] but found [false],
+expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The following asserts failed:
+expected [true] but found [false],
+expected [true] but found [false],
+expected [true] but found [false],
+expected [true] but found [false]
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+at com.mobileTest.ClientTest.validateClientActionbuttons(ClientTest.java:95)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validatadateEventMarker -->
-        <test-method signature="validateEventDelete()[pri:11, instance:com.mobileTest.HomeTest@5b247367]" started-at="2022-06-30T23:50:43 IST" name="validateEventDelete" finished-at="2022-06-30T23:50:43 IST" duration-ms="398" status="PASS">
+        </test-method> <!-- validateClientActionbuttons -->
+        <test-method is-config="true" signature="Close()[pri:0, instance:com.mobileTest.ClientTest@47e2e487]" started-at="2022-07-04T15:45:26 IST" name="Close" finished-at="2022-07-04T15:45:26 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validateEventDelete -->
-      </class> <!-- com.mobileTest.HomeTest -->
+        </test-method> <!-- Close -->
+      </class> <!-- com.mobileTest.ClientTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

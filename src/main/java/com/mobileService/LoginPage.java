@@ -4,7 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import webActionHelpers.ActionHelper;
 import webActionHelpers.AlertFrameWindowHelper;
 import webActionHelpers.MouseAction;
@@ -32,13 +31,17 @@ public class LoginPage {
 	WebElement passSubmit;
 	@FindBy(xpath = "//p[contains(.,'Logged In Successfully')]")
 	WebElement loggedSuccessful;
+	@FindBy(xpath = "//span[contains(.,'Joe Jacobs')]")
+	WebElement joelogoutDrop;
+	@FindBy(xpath = "//a[contains(.,'Sign out')]")
+	WebElement joesignout;
 	
-	public LoginPage(WebDriver driver)
-	{
-		this.driver = driver;
+	
+	public LoginPage(WebDriver driver) {
+		this.driver= driver;
 		PageFactory.initElements(driver,this);
-	}
-	
+			}
+
 	public String pageURL()
 	{
 		return ab.getPageCurrentUrl(driver);
@@ -71,5 +74,14 @@ public boolean isUserNamefeildDisplayed() {
 	{
 		return loggedSuccessful.isDisplayed();
 	}
+	public void loggout()
+	{
+		ac.mouseClick(driver, joelogoutDrop);
+		ac.mouseClick(driver, joesignout);
+	}
+	
 
-}
+	
+	}
+
+

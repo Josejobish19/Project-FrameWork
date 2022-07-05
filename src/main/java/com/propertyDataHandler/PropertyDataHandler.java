@@ -10,11 +10,11 @@ public class PropertyDataHandler {
 	public static final String filePath = currentDir + "/src/main/resources/";
 	
 	public Properties readPropertiesFile(String fileName) throws IOException {
-		
+	
 		FileInputStream fis = null;
 		Properties prop = null;		
 		try {
-			System.out.println(("File path "+filePath+fileName));
+			//System.out.println(("File path "+filePath+fileName));
 			fis = new FileInputStream(filePath+fileName);
 			
 		prop = new Properties();

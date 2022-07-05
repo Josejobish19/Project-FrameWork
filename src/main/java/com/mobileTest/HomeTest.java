@@ -1,28 +1,47 @@
 package com.mobileTest;
 
+import java.io.IOException;
+import java.util.Properties;
 
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import org.testng.AssertJUnit;
 
-
-
-
+import com.mobileService.LoginPage;
 import com.mobileService.MobileHomePage;
-
-import graphql.Assert;
+import com.propertyDataHandler.PropertyDataHandler;
 
 public class HomeTest extends LoginTest{
+	
+	
 	MobileHomePage homepage;
+	LoginPage loginPage;
+
+	@BeforeMethod
+	public void setup() throws IOException {
+		
+		homepage = new MobileHomePage(driver);
+		loginpage = new LoginPage(driver);
+		
+		/*
+		 * PropertyDataHandler prop = new PropertyDataHandler();
+		
+		Properties allProp = prop.readPropertiesFile("configuration.properties");
 	
+		homepage =  homepage.login (allProp.getProperty("UserName"), allProp.getProperty("Password"));
+		 */
+	}
 	
-	
-	@Test(priority= 4, enabled = false)
-	public void validateUserDetailsDisplayed()
+	@Test(priority= 4)
+	public void validateUserDetailsDisplayed() 
 	{
-		 homepage = new MobileHomePage(driver);
-		 String Username = homepage.isUserDetailsDisplayed();
-		 AssertJUnit.assertEquals(Username,"Joe Jacobs" );
-	Assert.assertTrue(homepage.isUseronlineStatusDisplayed());
+		
+		homepage = new MobileHomePage(driver);
+		 
+	
+		 Assert.assertTrue(homepage.isUserDetailsDisplayed());
+	//Assert.assertTrue(homepage.isUseronlineStatusDisplayed());
 	
 		
 	}
@@ -30,7 +49,8 @@ public class HomeTest extends LoginTest{
 	@Test(priority= 5)
 	public void validateHomePageFeilds()
 	{
-		 homepage = new MobileHomePage(driver);
+		homepage = new MobileHomePage(driver);
+		 
 		Assert.assertTrue(homepage.isHomeFeildDisplayed());
 		Assert.assertTrue(homepage.isServiceManagemenDisplayed());
 		Assert.assertTrue(homepage.isClientDisplayed());
@@ -56,7 +76,7 @@ public class HomeTest extends LoginTest{
 		homepage.homeEmailid("josejobish19@gmail.com");
 		homepage.homeEmailsubject("Hello world");
 		homepage.homeEmailMessage("Welcome to obsqura");
-		AssertJUnit.assertTrue(homepage.isLoadingmessagedisplayed());
+		Assert.assertTrue(homepage.isLoadingmessagedisplayed());
 	}
 	
 	@Test(priority = 8)
@@ -75,16 +95,40 @@ public class HomeTest extends LoginTest{
 		homepage.smsSend();
 		Assert.assertTrue(homepage.smsConfirm());
 	}
-	@Test(priority = 10)
+	@Test(priority = 10,enabled = false)
 	public void validatadateEventMarker()
 	{
 		homepage.dateEventMarker("Happy Birthday");
 		Assert.assertTrue(homepage.eventAddSuccess());
 	}
-	@Test(priority = 11)
+	@Test(priority = 11,enabled = false)
 			public void validateEventDelete()
 			{
 		homepage.deleteEventMarker();
 			}
+	@Test(priority = 12)
+	public void validateMainNavigationFields()
+	{
+		Assert.assertTrue(homepage.isMAINNAVIGATIONDisplayed());
+		Assert.assertTrue(homepage.isActivityLogDisplayed());
+		Assert.assertTrue(homepage.isHomeDisplayed());
+		Assert.assertTrue(homepage.isClientsDisplayed());
+		Assert.assertTrue(homepage.isInventoryDisplayed());
+		Assert.assertTrue(homepage.isPOSDisplayed());
+		Assert.assertTrue(homepage.isPurchasesDisplayed());
+		Assert.assertTrue(homepage.isSystemSettingLogDisplayed());
+		}
+	
+@AfterMethod
 
+
+	public void Close()
+	{
+
+		//loginpage.loggout();
+	}
+	
 }
+
+
+
