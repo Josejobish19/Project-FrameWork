@@ -7,9 +7,8 @@
         <methods>
           <include name="validateClientSerchResult"/>
           <include name="launchChromeBrowser"/>
-          <include name="validateClientActionbuttons"/>
-          <include name="validateClientDetails1"/>
           <include name="Close"/>
+          <include name="validateClientTablesize"/>
           <include name="setup"/>
         </methods>
       </class> <!-- com.mobileTest.ClientTest -->

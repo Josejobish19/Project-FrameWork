@@ -17,11 +17,11 @@ import webActionHelpers.SendkeysActionHelper;
 public class MobileClient {
 	
 	WebDriver driver;
-	ActionHelper ab  = new ActionHelper();
-	MouseAction ac = new MouseAction();
-	SendkeysActionHelper  ad = new SendkeysActionHelper();
-	AlertFrameWindowHelper ae = new AlertFrameWindowHelper();
-	GetTableSizeList ts = new GetTableSizeList();
+	ActionHelper actionhelp  = new ActionHelper();
+	MouseAction clickhelp = new MouseAction();
+	SendkeysActionHelper  Sendkey = new SendkeysActionHelper();
+	AlertFrameWindowHelper Alerthelp = new AlertFrameWindowHelper();
+	GetTableSizeList Gettablehelp = new GetTableSizeList();
 	@FindBy(xpath = "//h1[contains(.,'Customers')]")
 	WebElement Customers;
 	@FindBy(xpath = "//button[contains(.,' Add Client    ')]")
@@ -83,7 +83,7 @@ public boolean isclientSearchdisplayed()
 	return ClientSearch.isDisplayed();
 }
 public void clickClient() {
-	ac.mouseClick(driver, Clients);
+	clickhelp.mouseClick(driver, Clients);
 	
 }
 public int tableClientsize1(  ) throws Exception
@@ -92,7 +92,7 @@ public int tableClientsize1(  ) throws Exception
 }
 public void clientsearchResult(String name)
 {
-	ad.sendkeys(driver, ClientSearch, name);
+	Sendkey.sendkeys(driver, ClientSearch, name);
 	
 }
 public String ClientsearchResultText()
@@ -125,13 +125,13 @@ public boolean isDeleteSelectedbuttondisplayed()
 }
 public void clickClientAction()
 {
-	ac.mouseClick(driver, clientActionsbutton);
+	clickhelp.mouseClick(driver, clientActionsbutton);
 }
 public MobileClient login(String username1 , String pwd1)
 {
-	ad.clearAndsendkeys(driver, username , username1);
-	ad.clearAndsendkeys(driver, password , pwd1);
-	ac.mouseClick(driver, passSubmit);
+	Sendkey.clearAndsendkeys(driver, username , username1);
+	Sendkey.clearAndsendkeys(driver, password , pwd1);
+	clickhelp.mouseClick(driver, passSubmit);
 	return new MobileClient(driver);
 	
 }

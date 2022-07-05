@@ -15,10 +15,10 @@ import webActionHelpers.SendkeysActionHelper;
 public class LoginPage {
 	
 	WebDriver driver;
-	ActionHelper ab  = new ActionHelper();
-	MouseAction ac = new MouseAction();
-	SendkeysActionHelper  ad = new SendkeysActionHelper();
-	AlertFrameWindowHelper ae = new AlertFrameWindowHelper();
+	ActionHelper actionhelp  = new ActionHelper();
+	MouseAction clickhelp = new MouseAction();
+	SendkeysActionHelper  Sendkey = new SendkeysActionHelper();
+	AlertFrameWindowHelper Alerthelp = new AlertFrameWindowHelper();
 	
 	@FindBy(xpath = "//input[@name=\"identity\"]")
 	WebElement username;
@@ -44,7 +44,7 @@ public class LoginPage {
 
 	public String pageURL()
 	{
-		return ab.getPageCurrentUrl(driver);
+		return actionhelp.getPageCurrentUrl(driver);
 		
 	}
 public boolean isUserNamefeildDisplayed() {
@@ -57,17 +57,17 @@ public boolean isUserNamefeildDisplayed() {
 	}
 	
 	public void loginUsername(String Username1) {
-		ad.clearAndsendkeys(driver, username, Username1);
+		Sendkey.clearAndsendkeys(driver, username, Username1);
 		
 	}
 	public void loginPassword(String Password1) {
-		ad.clearAndsendkeys(driver,password , Password1);
+		Sendkey.clearAndsendkeys(driver,password , Password1);
 	}
 	
 	public void loginButtonandSavePassword()
 	{
-		ac.mouseClick(driver, passReminder);
-		ac.mouseClick(driver, passSubmit);
+		clickhelp.mouseClick(driver, passReminder);
+		clickhelp.mouseClick(driver, passSubmit);
 	}
 	
 	public boolean isLogSuccessMessageDispalyed()
@@ -76,8 +76,8 @@ public boolean isUserNamefeildDisplayed() {
 	}
 	public void loggout()
 	{
-		ac.mouseClick(driver, joelogoutDrop);
-		ac.mouseClick(driver, joesignout);
+		clickhelp.mouseClick(driver, joelogoutDrop);
+		clickhelp.mouseClick(driver, joesignout);
 	}
 	
 

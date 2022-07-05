@@ -1,12 +1,12 @@
 package com.mobileTest;
 
-import static org.testng.Assert.assertTrue;
+
 
 import java.io.IOException;
 import java.util.List;
 import java.util.Properties;
 
-import javax.xml.xpath.XPath;
+
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -21,10 +21,10 @@ import com.propertyDataHandler.PropertyDataHandler;
 
 import graphql.Assert;
 
-public final class ClientTest  extends HomeTest{
+public  class ClientTest  extends HomeTest{
 	
 	MobileClient client ;
-	
+	SoftAssert soft = new SoftAssert();
 	
 	
 	@BeforeMethod
@@ -48,6 +48,7 @@ public final class ClientTest  extends HomeTest{
 		 client.clickClient();
 		Assert.assertTrue(client.isCustomersfeildDisplayed());
 	}
+	
 	@Test(priority = 14)
 	public void validateClientfields()
 	{
@@ -69,24 +70,31 @@ public final class ClientTest  extends HomeTest{
 	String row1 =  ((WebElement) row).getText();
 	System.out.println(row1);
 	}
+	
 	@Test(priority = 16)
-	public void validateClientDetails1() throws Exception
+	public void validateClientTablesize() throws Exception
 	{
 		client.ClientsearchResultText();
 				System.out.println(client.tableClientsize1());
 	}
+	
 	@Test(priority = 17)
-	public void validateClientSerchResult() {
-		client.clientsearchResult("Jobish");
+	public void validateClientSerchResult() throws IOException {
+		
+PropertyDataHandler prop = new PropertyDataHandler();
+		
+		Properties allProp = prop.readPropertiesFile("configuration.properties");
+		
+		client.clientsearchResult(allProp.getProperty("clientSearch"));
 		System.out.println(client.ClientsearchResultText());
-		assertTrue(client.isClientsearchResultdisplayed());
+		soft.assertTrue(client.isClientsearchResultdisplayed());
 	
 		
 	}
 	@Test(priority = 18)
 	public void validateClientActionbuttons() {
 		client.clickClientAction();
-		SoftAssert soft = new SoftAssert();
+		
 		soft.assertTrue(client.isDeleteSelectedbuttondisplayed());
 		soft.assertTrue(client.isclientActionsbuttondisplayed());
 		soft.assertTrue(client.isExporttoExcelfilebuttondisplayed());

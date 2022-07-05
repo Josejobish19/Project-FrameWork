@@ -5,14 +5,11 @@ package com.mobileTest;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
+import org.testng.asserts.SoftAssert;
 
 import java.io.IOException;
 import java.util.Properties;
 
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.testng.Assert;
 
 import com.mobileService.LoginPage;
 
@@ -25,8 +22,7 @@ public class LoginTest extends BaseTest{
 	 PropertyDataHandler prop = new PropertyDataHandler();
 	LoginPage loginpage;
 	GetTableSizeList ts = new GetTableSizeList();
-	@FindBy(xpath = "//input[@name=\"identity\"]")
-	WebElement username;
+	SoftAssert soft = new SoftAssert();
 	
 @BeforeMethod
 public void setup() throws IOException {
@@ -41,14 +37,14 @@ public void setup() throws IOException {
 		String Actual =loginpage.pageURL();
 		String Expected ="https://qalegend.com/mobile_service/panel/login";
 		
-		Assert.assertEquals(Actual, Expected,"Incorrect URL");
+		soft.assertEquals(Actual, Expected,"Incorrect URL");
 			}
 	@Test(priority = 2, enabled =false)
 	public void validateareUsernameAndPasswordFieldsDisplayed() throws Exception
 	{
-		ts.waitUntilElementVisible(driver, username);		
-		Assert.assertTrue(loginpage.isUserNamefeildDisplayed(),"Unable to find username feild");
-		Assert.assertTrue(loginpage.isPasswordfeildDisplayed(),"Unable to find password feild");
+				
+		soft.assertTrue(loginpage.isUserNamefeildDisplayed(),"Unable to find username feild");
+		soft.assertTrue(loginpage.isPasswordfeildDisplayed(),"Unable to find password feild");
 	
 	}
 	@Test(priority = 3)
@@ -59,7 +55,7 @@ public void setup() throws IOException {
 		loginpage.loginUsername( allProp.getProperty("UserName"));
 		loginpage.loginPassword( allProp.getProperty("Password"));
 		loginpage.loginButtonandSavePassword();
-		Assert.assertTrue(loginpage.isLogSuccessMessageDispalyed(),"Invalid page Loaded");
+		soft.assertTrue(loginpage.isLogSuccessMessageDispalyed(),"Invalid page Loaded");
 	}
 	@AfterMethod
 	public void Close()

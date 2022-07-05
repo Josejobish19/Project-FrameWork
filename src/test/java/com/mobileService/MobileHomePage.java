@@ -15,10 +15,10 @@ public class MobileHomePage {
 
 
 	WebDriver driver;
-	ActionHelper ab  = new ActionHelper();
-	MouseAction ac = new MouseAction();
-	SendkeysActionHelper  ad = new SendkeysActionHelper();
-	AlertFrameWindowHelper ae = new AlertFrameWindowHelper();
+	ActionHelper actionhelp  = new ActionHelper();
+	MouseAction clickhelp = new MouseAction();
+	SendkeysActionHelper  Sendkey = new SendkeysActionHelper();
+	AlertFrameWindowHelper Alerthelp = new AlertFrameWindowHelper();
 	
 	@FindBy(xpath = "//p[contains(.,'Joe Jacobs')]")
 	WebElement userDetail;
@@ -115,7 +115,7 @@ public class MobileHomePage {
 
 	public String homeTitle()
 	{
-		return ab.getPageTitle(driver);
+		return actionhelp.getPageTitle(driver);
 	}
 	
 	public boolean isUserDetailsDisplayed()
@@ -171,17 +171,17 @@ public class MobileHomePage {
 	}
 	public void homeEmailid(String Emailid)
 	{
-		ad.clearAndsendkeys(driver,EmailId,Emailid);
+		Sendkey.clearAndsendkeys(driver,EmailId,Emailid);
 	}
 	public void homeEmailsubject(String Emailsubject)
 	{
-		ad.clearAndsendkeys(driver,EmailSubject,Emailsubject);
+		Sendkey.clearAndsendkeys(driver,EmailSubject,Emailsubject);
 	}
 		
 	public void homeEmailMessage(String EmailMessage) 
 	{
-		ad.clearAndsendkeys(driver,EmailMessage1 ,EmailMessage);
-		ac.mouseClick(driver, EmailSendButton);
+		Sendkey.clearAndsendkeys(driver,EmailMessage1 ,EmailMessage);
+		clickhelp.mouseClick(driver, EmailSendButton);
 		
 	}
 	public boolean isValidEmailIddisplayed()
@@ -195,15 +195,15 @@ public class MobileHomePage {
 	
 	public void smsPhoneNo(String phoneNo)
 	{
-		ad.clearAndsendkeys(driver, SMSphoneNo, phoneNo);
+		Sendkey.clearAndsendkeys(driver, SMSphoneNo, phoneNo);
 	}
 	public void smsContent(String SMSMessage)
 	{
-		ad.clearAndsendkeys(driver, SMScontent, SMSMessage);
+		Sendkey.clearAndsendkeys(driver, SMScontent, SMSMessage);
 	}
 	public void smsSend()
 	{
-		ac.mouseClick(driver, SMSsendButton);
+		clickhelp.mouseClick(driver, SMSsendButton);
 	}
 	public boolean smsConfirm()
 	{
@@ -215,9 +215,9 @@ public class MobileHomePage {
 	}
 	public void dateEventMarker(String EventName)
 	{
-		ac.mouseClick(driver,Date);
-		ad.sendkeys(driver, EventMsg, EventName);
-		ac.mouseClick(driver, EventSubmit);
+		clickhelp.mouseClick(driver,Date);
+		Sendkey.sendkeys(driver, EventMsg, EventName);
+		clickhelp.mouseClick(driver, EventSubmit);
 		
 	}
 	public boolean eventAddSuccess()
@@ -226,8 +226,8 @@ public class MobileHomePage {
 	}
 	public void deleteEventMarker()
 	{
-		ac.mouseClick(driver, EventdeleteSelect);
-		ac.mouseClick(driver, EventdeleteConfirm);
+		clickhelp.mouseClick(driver, EventdeleteSelect);
+		clickhelp.mouseClick(driver, EventdeleteConfirm);
 	}
 	
 	public boolean isMAINNAVIGATIONDisplayed()
@@ -270,9 +270,9 @@ public class MobileHomePage {
 	
 	public MobileHomePage login(String username1 , String pwd1)
 	{
-		ad.clearAndsendkeys(driver, username , username1);
-		ad.clearAndsendkeys(driver, password , pwd1);
-		ac.mouseClick(driver, passSubmit);
+		Sendkey.clearAndsendkeys(driver, username , username1);
+		Sendkey.clearAndsendkeys(driver, password , pwd1);
+		clickhelp.mouseClick(driver, passSubmit);
 		return new MobileHomePage(driver);
 		
 	}
