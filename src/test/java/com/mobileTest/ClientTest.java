@@ -10,6 +10,7 @@ import java.util.Properties;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -19,11 +20,14 @@ import com.mobileService.MobileClient;
 import com.mobileService.MobileHomePage;
 import com.propertyDataHandler.PropertyDataHandler;
 
-import graphql.Assert;
 
-public  class ClientTest  extends HomeTest{
+
+
+public  class ClientTest  extends  HomeTest{
 	
 	MobileClient client ;
+	MobileHomePage homepage;
+	LoginPage loginPage;
 	SoftAssert soft = new SoftAssert();
 	
 	
@@ -40,7 +44,7 @@ public  class ClientTest  extends HomeTest{
 	 client =  client.login (allProp.getProperty("UserName"), allProp.getProperty("Password"));
 	 
 	  */
-	}
+	}                
 	
 	@Test(priority = 13)
 	public void validateClientpage()
@@ -75,11 +79,11 @@ public  class ClientTest  extends HomeTest{
 	public void validateClientTablesize() throws Exception
 	{
 		client.ClientsearchResultText();
-				System.out.println(client.tableClientsize1());
+				System.out.println("Total size is "+client.tableClientsize1());
 	}
 	
 	@Test(priority = 17)
-	public void validateClientSerchResult() throws IOException {
+	public void validateClientSerchResult() throws Exception {
 		
 PropertyDataHandler prop = new PropertyDataHandler();
 		
@@ -87,19 +91,26 @@ PropertyDataHandler prop = new PropertyDataHandler();
 		
 		client.clientsearchResult(allProp.getProperty("clientSearch"));
 		System.out.println(client.ClientsearchResultText());
-		soft.assertTrue(client.isClientsearchResultdisplayed());
+		soft.assertTrue(client.isClientsearchResultdisplayed(),"Element is not displayed");
 	
 		
-	}
-	@Test(priority = 18)
-	public void validateClientActionbuttons() {
-		client.clickClientAction();
+	}@Test(priority = 18)
+	public void validateClientActionbuttonsWork() throws Exception {
 		
-		soft.assertTrue(client.isDeleteSelectedbuttondisplayed());
-		soft.assertTrue(client.isclientActionsbuttondisplayed());
-		soft.assertTrue(client.isExporttoExcelfilebuttondisplayed());
-		soft.assertTrue(client.isExporttoPDFfilebuttondisplayed());
-		soft.assertTrue(client.isAddCustomersbyCSVbuttondisplayed());
+		
+		client.clickClientAction();
+		client.clickClientAction();
+		soft.assertTrue(client.isDeleteSelectedbuttondisplayed(),"Element is not displayed");
+		
+	}
+	@Test(priority = 19)
+	public void validateClientActionbuttons() throws InterruptedException {
+		
+		soft.assertTrue(client.isDeleteSelectedbuttondisplayed(),"Element is not displayed");
+		soft.assertTrue(client.isclientActionsbuttondisplayed(),"Element is not displayed");
+		soft.assertTrue(client.isExporttoExcelfilebuttondisplayed(),"Element is not displayed");
+		soft.assertTrue(client.isExporttoPDFfilebuttondisplayed(),"Element is not displayed");
+		soft.assertTrue(client.isAddCustomersbyCSVbuttondisplayed(),"Element is not displayed");
 		soft.assertAll();
 	
 		

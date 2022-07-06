@@ -3,13 +3,27 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
+      <class name="com.mobileTest.HomeTest">
+        <methods>
+          <include name="launchChromeBrowser"/>
+          <include name="validateEmptySMS"/>
+          <include name="validateMainNavigationFields"/>
+          <include name="validateHomePageFeilds"/>
+          <include name="validateSMS"/>
+          <include name="validateValidLogin"/>
+          <include name="validateUserDetailsDisplayed"/>
+          <include name="validatevalidEmailidMessage"/>
+          <include name="validateInvalidEmailidMessage"/>
+          <include name="Close"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.mobileTest.HomeTest -->
       <class name="com.mobileTest.LoginTest">
         <methods>
           <include name="launchChromeBrowser"/>
           <include name="setup"/>
           <include name="Close"/>
           <include name="validateValidLogin"/>
-          <include name="validateURL"/>
         </methods>
       </class> <!-- com.mobileTest.LoginTest -->
       <class name="com.mobileTest.ClientTest">
@@ -18,9 +32,9 @@
           <include name="validateClientfields"/>
           <include name="validateMainNavigationFields"/>
           <include name="validateHomePageFeilds"/>
-          <include name="validateURL"/>
-          <include name="validateClientDetails1"/>
+          <include name="validateClientActionbuttons"/>
           <include name="validateClientpage"/>
+          <include name="validateClientTablesize"/>
           <include name="launchChromeBrowser"/>
           <include name="validateEmptySMS"/>
           <include name="validateSMS"/>
@@ -32,22 +46,28 @@
           <include name="setup"/>
         </methods>
       </class> <!-- com.mobileTest.ClientTest -->
-      <class name="com.mobileTest.HomeTest">
+      <class name="com.mobileTest.AddClientTest">
         <methods>
-          <include name="launchChromeBrowser"/>
-          <include name="validateEmptySMS"/>
+          <include name="validateClientSerchResult"/>
+          <include name="validateClientfields"/>
           <include name="validateMainNavigationFields"/>
           <include name="validateHomePageFeilds"/>
+          <include name="validateURL"/>
+          <include name="validateClientActionbuttons"/>
+          <include name="validateClientpage"/>
+          <include name="validateClientTablesize"/>
+          <include name="validateAddClientFieldsDisplayed"/>
+          <include name="setup"/>
+          <include name="launchChromeBrowser"/>
+          <include name="validateEmptySMS"/>
           <include name="validateSMS"/>
           <include name="validateValidLogin"/>
           <include name="validateUserDetailsDisplayed"/>
-          <include name="validateURL"/>
           <include name="validatevalidEmailidMessage"/>
           <include name="validateInvalidEmailidMessage"/>
           <include name="Close"/>
-          <include name="setup"/>
         </methods>
-      </class> <!-- com.mobileTest.HomeTest -->
+      </class> <!-- com.mobileTest.AddClientTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

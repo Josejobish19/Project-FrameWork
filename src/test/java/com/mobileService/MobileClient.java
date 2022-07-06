@@ -7,12 +7,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-
 import webActionHelpers.ActionHelper;
 import webActionHelpers.AlertFrameWindowHelper;
 import webActionHelpers.GetTableSizeList;
 import webActionHelpers.MouseAction;
 import webActionHelpers.SendkeysActionHelper;
+
 
 public class MobileClient {
 	
@@ -22,6 +22,8 @@ public class MobileClient {
 	SendkeysActionHelper  Sendkey = new SendkeysActionHelper();
 	AlertFrameWindowHelper Alerthelp = new AlertFrameWindowHelper();
 	GetTableSizeList Gettablehelp = new GetTableSizeList();
+	
+	
 	@FindBy(xpath = "//h1[contains(.,'Customers')]")
 	WebElement Customers;
 	@FindBy(xpath = "//button[contains(.,' Add Client    ')]")
@@ -35,9 +37,9 @@ public class MobileClient {
 	@FindBy(xpath = "//input[@type=\"search\"and@aria-controls=\"dynamic-table\"]")
 	WebElement ClientSearch;
 	
-	@FindBy(xpath = "xpath(\"//*[@id=\\\"dynamic-table\\\"]/tbody/tr\")")
+	@FindBy(xpath = "//div//tr[1]")
 	List<WebElement> tableClientsize;
-	@FindBy(xpath = "xpath(\"//*[@id=\"dynamic-table\"]/tbody/tr/td[2]")
+	@FindBy(xpath = "//tr//td[contains(.,'Jobish ')]")
 	WebElement tableClientresult;
 	@FindBy(xpath = "//input[@name=\"identity\"]")
 	WebElement username;
@@ -45,7 +47,7 @@ public class MobileClient {
 	WebElement password;
 	@FindBy(xpath = "//input[@name=\"submit\"]")
 	WebElement passSubmit;
-	@FindBy(xpath = "//*[@id=\"content-wrapper\"]/section[2]/div/li/a")
+	@FindBy(xpath = "//a[@class=\"dropdown-toggle btn-round btn btn-default\"]")
 	WebElement clientActionsbutton;
 	@FindBy(xpath = "//a[contains(.,' Export to Excel file                    ')]")
 	WebElement ExporttoExcelfilebutton;
@@ -62,6 +64,7 @@ public  MobileClient(WebDriver driver)
 	this.driver= driver;
 	PageFactory.initElements(driver,this);
 }
+
 public boolean isCustomersfeildDisplayed()
 {
 	return Customers.isDisplayed();
@@ -95,8 +98,9 @@ public void clientsearchResult(String name)
 	Sendkey.sendkeys(driver, ClientSearch, name);
 	
 }
-public String ClientsearchResultText()
+public String ClientsearchResultText() throws Exception
 {
+	Gettablehelp.waitUntilElementVisible(driver, tableClientresult) ;
 	return tableClientresult.getText();
 }
 public boolean isClientsearchResultdisplayed()
@@ -123,9 +127,10 @@ public boolean isDeleteSelectedbuttondisplayed()
 {
 	return DeleteSelectedbutton.isDisplayed();
 }
-public void clickClientAction()
+public void clickClientAction() throws Exception
 {
-	clickhelp.mouseClick(driver, clientActionsbutton);
+	
+	clickhelp.doubleClick(driver, clientActionsbutton);
 }
 public MobileClient login(String username1 , String pwd1)
 {
