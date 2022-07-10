@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
 import webActionHelpers.ActionHelper;
 import webActionHelpers.AlertFrameWindowHelper;
 import webActionHelpers.MouseAction;
@@ -66,9 +67,9 @@ public class MobileHomePage {
 	WebElement EmptySMS;
 	@FindBy(xpath = "//td[@data-date=\"2022-06-16\"]")
 	WebElement Date;
-	@FindBy(xpath = "/html/body/div[12]/div/div/div[2]/div/form/input")
+	@FindBy(xpath = "//form//input[@class=\"bootbox-input bootbox-input-text form-control\"]")
 	WebElement EventMsg;
-	@FindBy(xpath = "//button[contains(.,'OK')]")
+	@FindBy(xpath = "//button[contains(.,'OK') and @class=\"btn btn-primary\"]")
 	WebElement EventSubmit;
 	@FindBy(xpath = "//div[contains(.,'Added Successfully')]")
 	WebElement AddedSucess;
@@ -104,6 +105,8 @@ public class MobileHomePage {
 	WebElement password;
 	@FindBy(xpath = "//input[@name=\"submit\"]")
 	WebElement passSubmit;
+	@FindBy(xpath = "//div[@class=\"modal-body\"]")
+	WebElement framemodal;
 	
 	
 	public MobileHomePage(WebDriver driver)
@@ -215,7 +218,9 @@ public class MobileHomePage {
 	}
 	public void dateEventMarker(String EventName)
 	{
+		
 		clickhelp.mouseClick(driver,Date);
+		driver.switchTo().frame(framemodal);
 		Sendkey.sendkeys(driver, EventMsg, EventName);
 		clickhelp.mouseClick(driver, EventSubmit);
 		
@@ -268,12 +273,11 @@ public class MobileHomePage {
 		return   SystemSetting.isDisplayed();
 	}
 	
-	public MobileHomePage login(String username1 , String pwd1)
+	
+	public  MobileClientPage clientpageclick()
 	{
-		Sendkey.clearAndsendkeys(driver, username , username1);
-		Sendkey.clearAndsendkeys(driver, password , pwd1);
-		clickhelp.mouseClick(driver, passSubmit);
-		return new MobileHomePage(driver);
+		Clients.click();
 		
+		return new MobileClientPage(driver);
 	}
 }

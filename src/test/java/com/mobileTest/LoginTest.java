@@ -2,10 +2,11 @@ package com.mobileTest;
 
 
 
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 
 import java.io.IOException;
 import java.util.Properties;
@@ -13,22 +14,28 @@ import java.util.Properties;
 
 import com.mobileService.LoginPage;
 
-import com.propertyDataHandler.PropertyDataHandler;
+import com.propertyDataHandler.PropertyDataHand;
 
 import webActionHelpers.GetTableSizeList;
 
 public class LoginTest extends BaseTest{
 	
-	 PropertyDataHandler prop = new PropertyDataHandler();
+	 PropertyDataHand prop = new PropertyDataHand();
 	LoginPage loginpage;
 	GetTableSizeList ts = new GetTableSizeList();
-	SoftAssert soft = new SoftAssert();
-	
+
+	public LoginTest()
+	{
+		super();
+	}
+
 @BeforeMethod
-public void setup() throws IOException {
-		
+@Parameters("browserType")
+public void setup(String browserType) {
+	driver = launchBrowser(browserType);
 		loginpage = new LoginPage(driver);
 			}
+
 	@Test(priority = 1)
 	public void  validateURL(){
 		
@@ -37,14 +44,14 @@ public void setup() throws IOException {
 		String Actual =loginpage.pageURL();
 		String Expected ="https://qalegend.com/mobile_service/panel/login";
 		
-		soft.assertEquals(Actual, Expected,"Incorrect URL");
+         Assert.assertEquals(Actual, Expected,"Incorrect URL");
 			}
-	@Test(priority = 2, enabled =false)
+	@Test(priority = 2)
 	public void validateareUsernameAndPasswordFieldsDisplayed() throws Exception
 	{
-				
-		soft.assertTrue(loginpage.isUserNamefeildDisplayed(),"Unable to find username feild");
-		soft.assertTrue(loginpage.isPasswordfeildDisplayed(),"Unable to find password feild");
+		
+		Assert.assertTrue(loginpage.isUserNamefeildDisplayed(),"Unable to find username feild");
+		Assert.assertTrue(loginpage.isPasswordfeildDisplayed(),"Unable to find password feild");
 	
 	}
 	@Test(priority = 3)
@@ -55,14 +62,14 @@ public void setup() throws IOException {
 		loginpage.loginUsername( allProp.getProperty("UserName"));
 		loginpage.loginPassword( allProp.getProperty("Password"));
 		loginpage.loginButtonandSavePassword();
-		soft.assertTrue(loginpage.isLogSuccessMessageDispalyed(),"Invalid page Loaded");
+		Assert.assertTrue(loginpage.isLogSuccessMessageDispalyed(),"Invalid page Loaded");
 	}
 	@AfterMethod
-	public void Close()
+	public void quitBrowser()
 	{
-
-		//loginpage.loggout();
-	}
+		driver.quit();
+	
+}
 	
 
 }

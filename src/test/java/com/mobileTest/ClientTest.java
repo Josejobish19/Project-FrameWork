@@ -6,44 +6,44 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Properties;
 
-
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-
 import com.mobileService.LoginPage;
-import com.mobileService.MobileClient;
+import com.mobileService.MobileClientPage;
 import com.mobileService.MobileHomePage;
-import com.propertyDataHandler.PropertyDataHandler;
+import com.propertyDataHandler.PropertyDataHand;
 
 
 
 
-public  class ClientTest  extends  HomeTest{
+public  class ClientTest  extends  BaseTest {
 	
-	MobileClient client ;
-	MobileHomePage homepage;
+	MobileClientPage client ;
 	LoginPage loginPage;
-	SoftAssert soft = new SoftAssert();
+	MobileHomePage homepage;
+	
+	public ClientTest()
+	{
+		super();
+	}
 	
 	
 	@BeforeMethod
-	public void setup() throws IOException {
-		
+	@Parameters("browserType")
+	public void setup(String browserType) throws IOException  {
+		driver = launchBrowser(browserType);
+		loginPage = new LoginPage(driver);
 		homepage = new MobileHomePage(driver);
-		loginpage = new LoginPage(driver);
-		 client = new MobileClient(driver) ;
-		
-		/*PropertyDataHandler prop = new PropertyDataHandler();
-		Properties allProp = prop.readPropertiesFile("configuration.properties");
-	
-	 client =  client.login (allProp.getProperty("UserName"), allProp.getProperty("Password"));
-	 
-	  */
+		client = new MobileClientPage(driver);
+		loginPage.login();
+		client.clientsbut();
+		 
 	}                
 	
 	@Test(priority = 13)
@@ -56,56 +56,48 @@ public  class ClientTest  extends  HomeTest{
 	@Test(priority = 14)
 	public void validateClientfields()
 	{
-	   Assert.assertTrue(client.isCustomersfeildDisplayed());
-	   Assert.assertTrue(client.isAddClientButtondisplayed());
-	   Assert.assertTrue(client.isChangecolumnsButtondisplayed());
-	   Assert.assertTrue(client.istableLengthButtondisplayed());
-	   Assert.assertTrue(client.isclientSearchdisplayed());
-	 
+		SoftAssert soft =new SoftAssert();
+		soft.assertTrue(client.isCustomersfeildDisplayed());
+		soft.assertTrue(client.isAddClientButtondisplayed());
+		soft.assertTrue(client.isChangecolumnsButtondisplayed());
+		soft.assertTrue(client.istableLengthButtondisplayed());
+		soft.assertTrue(client.isclientSearchdisplayed());
+	 soft.assertAll();
 }
-	@Test(priority = 15, enabled = false)
-	public void validateClientDetails()
-	{
 	
-		int rowtext  = driver.findElements(By.xpath("//*[@id=\"dynamic-table\"]/tbody/tr")).size();
-	System.out.println("Size of table is "+rowtext);
-	
-	List<WebElement> row = driver.findElements(By.xpath("//*[@id=\"dynamic-table\"]/tbody/tr[1]"));
-	String row1 =  ((WebElement) row).getText();
-	System.out.println(row1);
-	}
-	
+
 	@Test(priority = 16)
-	public void validateClientTablesize() throws Exception
+	public void validateClientTablesize() throws Throwable 
 	{
 		client.ClientsearchResultText();
 				System.out.println("Total size is "+client.tableClientsize1());
 	}
 	
 	@Test(priority = 17)
-	public void validateClientSerchResult() throws Exception {
+	public void validateClientSerchResult() throws Throwable  {
 		
-PropertyDataHandler prop = new PropertyDataHandler();
+PropertyDataHand prop = new PropertyDataHand();
 		
 		Properties allProp = prop.readPropertiesFile("configuration.properties");
 		
 		client.clientsearchResult(allProp.getProperty("clientSearch"));
 		System.out.println(client.ClientsearchResultText());
-		soft.assertTrue(client.isClientsearchResultdisplayed(),"Element is not displayed");
+		Assert.assertTrue(client.isClientsearchResultdisplayed(),"Element is not displayed");
 	
 		
 	}@Test(priority = 18)
-	public void validateClientActionbuttonsWork() throws Exception {
+	public void validateClientActionbuttonsWork() throws Throwable {
 		
-		
+		client = new MobileClientPage(driver);
 		client.clickClientAction();
-		client.clickClientAction();
-		soft.assertTrue(client.isDeleteSelectedbuttondisplayed(),"Element is not displayed");
+		Assert.assertTrue(client.isDeleteSelectedbuttondisplayed(),"Element is not displayed");
 		
 	}
 	@Test(priority = 19)
 	public void validateClientActionbuttons() throws InterruptedException {
 		
+		client.clickClientAction();
+		SoftAssert soft = new SoftAssert();
 		soft.assertTrue(client.isDeleteSelectedbuttondisplayed(),"Element is not displayed");
 		soft.assertTrue(client.isclientActionsbuttondisplayed(),"Element is not displayed");
 		soft.assertTrue(client.isExporttoExcelfilebuttondisplayed(),"Element is not displayed");
@@ -115,5 +107,17 @@ PropertyDataHandler prop = new PropertyDataHandler();
 	
 		
 	}
+	@Test(priority = 19)
+	public void validateClientAdd() 
+	{
+		client = new MobileClientPage(driver);
+		client.clickClientAdd();
+	}
+	@AfterMethod
+	public void quitBrowser()
+	{
+		driver.quit();
+	
+}
 	
 }

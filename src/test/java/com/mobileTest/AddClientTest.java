@@ -2,85 +2,109 @@ package com.mobileTest;
 
 
 
-import org.testng.annotations.BeforeMethod;
+import static org.testng.Assert.assertEquals;
 
+import java.io.IOException;
+
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import com.mobileService.AddClient;
 import com.mobileService.LoginPage;
-import com.mobileService.MobileClient;
+import com.mobileService.MobileClientPage;
 import com.mobileService.MobileHomePage;
-import com.propertyDataHandler.PropertyDataHandler;
+import com.propertyDataHandler.ExcelHandler;
 
-public class AddClientTest extends ClientTest {
+
+
+public class AddClientTest extends BaseTest  {
 	
+	
+	MobileClientPage client;
+	LoginPage loginpage;
 	AddClient addclientpage;
-	SoftAssert soft = new  SoftAssert();
+	MobileHomePage homepage;
+	ExcelHandler excelobject = new 	ExcelHandler();
+	
+	
 	@BeforeMethod
-	public void setup()
-	{
-		addclientpage = new AddClient(driver) ;
-		homepage = new MobileHomePage(driver);
+	@Parameters("browserType")
+	public void setup(String browserType) throws IOException  {
+		driver = launchBrowser(browserType);
 		loginpage = new LoginPage(driver);
-		 client = new MobileClient(driver) ;
+		homepage = new MobileHomePage(driver);
+		client = new MobileClientPage(driver);
+		addclientpage = new AddClient(driver);
+		loginpage.login();
+		client.clientsbut();
 		
-	}
-	@Test(priority = 20)
-	public void validateAddClientFieldsDisplayed() throws Exception
+		 
+	}                
+	
+	@Test(priority = 20,enabled = false)
+	public void validateAddClientFieldsDisplayed() throws Exception 
 	{
-		Thread.sleep(5000);
+		
 		
 		addclientpage.clickAddClientButton();
-		
-		soft.assertTrue(addclientpage.isClientAddressFeildDisplayed(),"Element is not displayed");
-		soft.assertTrue(addclientpage.isClientcityFeildDisplayed(),"Element is not displayed");
-		soft.assertTrue(addclientpage.isClientcityFeildDisplayed(),"Element is not displayed");
-		soft.assertTrue(addclientpage.isClientcompanyFeildDisplayed(),"Element is not displayed");
-		soft.assertTrue(addclientpage.isClientemailFeildDisplayed(),"Element is not displayed");
-		soft.assertTrue(addclientpage.isClientGoBackbuttonDisplayed(),"Element is not displayed");
-		soft.assertTrue(addclientpage.isClientlocationFeildDisplayed(),"Element is not displayed");
-		soft.assertTrue(addclientpage.isClientnameFeildDisplayed(),"Element is not displayed");
-		soft.assertTrue(addclientpage.isClientphoneFeildDisplayed(),"Element is not displayed");
-		soft.assertTrue(addclientpage.isClientPincodeFeildDisplayed(),"Element is not displayed");
-		soft.assertTrue(addclientpage.isClientsubmitbuttonDisplayed(),"Element is not displayed");
+		SoftAssert soft = new  SoftAssert();
+		soft.assertTrue(addclientpage.isClientAddressFeildDisplayed(),"AddressFeild Element is not displayed");
+		soft.assertTrue(addclientpage.isClientcityFeildDisplayed(),"cityFeild Element is not displayed");
+		soft.assertTrue(addclientpage.isClientcompanyFeildDisplayed(),"companyFeild Element is not displayed");
+		soft.assertTrue(addclientpage.isClientemailFeildDisplayed(),"emailFeild Element is not displayed");
+		soft.assertTrue(addclientpage.isClientlocationFeildDisplayed(),"locationFeild Element is not displayed");
+		soft.assertTrue(addclientpage.isClientnameFeildDisplayed(),"nameFeild Element is not displayed");
+		soft.assertTrue(addclientpage.isClientphoneFeildDisplayed(),"phoneFeild Element is not displayed");
+		soft.assertTrue(addclientpage.isClientPincodeFeildDisplayed(),"PincodeFeild Element is not displayed");
+		soft.assertTrue(addclientpage.isClientsubmitbuttonDisplayed(),"submitbutton Element is not displayed");
 		soft.assertAll();
 	
 	}
-/*
-	@Test(priority = 21 ,dataProvider="Credentials")
-	public void validateAllclientdetails(String name ,String company , String City, int postcode,int phone) throws InterruptedException {
+	@Test(priority = 20,enabled = false)
+	public void validateClientdetailsEmptySubmision() throws Exception
+	{
+		addclientpage.clickAddClientButton();
+		addclientpage.addClientnameedata("");
+		addclientpage.addClientcompanydata("");
+		addclientpage.addClientAddressdata("");
+		addclientpage.addClientsubmit();
+		Assert.assertTrue(addclientpage.isEmptyclientdetailsubmitdisplayed());
 		
-		addclientpage.typeClientnameFeild(name);
-		addclientpage.typeClientcompanyFeild(company);
-		addclientpage.typeClientcityFeild (City);
-		addclientpage.typeClientPincodeFeild(postcode);
-		addclientpage.typeClientphoneFeild (phone);
-		
-	addclientpage.addClientsubmitbutton();
-
-		
-		
+	}
+	@Test(priority = 21,enabled = false)
+	public void validateAddclientDetails() throws Exception
+	{
+		addclientpage.clickAddClientButton();
+		ExcelHandler excelobject = new 	ExcelHandler();
+		excelobject .setExcelFileSheet("client");
+		addclientpage.addClientnameedata(excelobject.getCellData(1, 0));
+		addclientpage.addClientcompanydata(excelobject.getCellData(1,1));
+		addclientpage.addClientAddressdata(excelobject.getCellData(1, 2));
+		addclientpage.addClientcitydata(excelobject.getCellData(1,3));
+		addclientpage.addClientphonedata(excelobject.getCellData(1, 4));
+		addclientpage.addClientemaildata(excelobject.getCellData(1,5));
+		addclientpage.addClientsubmit();
+		Assert.assertTrue(addclientpage.isclientdetailsubmiconfrmtdisplayed(),"client is not submited");
 	
 		
 	}
-	@DataProvider(name="Credentials")
-	public Object[][] getData() throws IOException{
-PropertyDataHandler prop = new PropertyDataHandler();
-		
-		Properties allProp = prop.readPropertiesFile("configuration.properties");
-	Object[][] data = new Object[0][5];
-	
-	data[0][0]=allProp.getProperty("Name");
-	data[0][1]=allProp.getProperty("Name");
-	data[0][2]=allProp.getProperty("Name");
-	data[0][3]=allProp.getProperty("Name");
-	data[0][4]=allProp.getProperty("Name");
-	data[0][5]=allProp.getProperty("Name");
-	
-	return data;
+	@Test(priority = 22,enabled = true)
+	public void ValidateclientDelete(){
+		addclientpage.enterdeleteSerch("zacmike");
+		addclientpage.clickclientdelete();
 		
 	}
-*/
+	
+	
 
+	@AfterMethod
+	public void quitBrowser()
+	{
+		//driver.quit();
+	
+}
 }

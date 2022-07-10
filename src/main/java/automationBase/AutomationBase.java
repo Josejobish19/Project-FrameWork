@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import com.exceptions.AutomationExceptions.AutomationException;
-import com.propertyDataHandler.PropertyDataHandler;
+import com.propertyDataHandler.PropertyDataHand;
 import com.utility.AutomationConstants;
 
 import webActionHelpers.ActionHelper;
@@ -16,7 +16,7 @@ import webActionHelpers.ActionHelper;
 public class AutomationBase {
 	
 	public WebDriver driver;
-	 PropertyDataHandler prop = new PropertyDataHandler();
+	 PropertyDataHand prop = new PropertyDataHand();
 	 ActionHelper ab  = new ActionHelper();
 
 	 private void launchChromeBrowser() throws IOException{

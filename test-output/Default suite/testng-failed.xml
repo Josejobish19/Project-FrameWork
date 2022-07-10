@@ -3,18 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.mobileTest.AddClientTest">
+      <class name="com.mobileTest.POSTest">
         <methods>
-          <include name="validateClientSerchResult"/>
-          <include name="launchChromeBrowser"/>
-          <include name="validateAllclientdetails"/>
-          <include name="validateClientActionbuttons"/>
-          <include name="Close"/>
-          <include name="validateClientTablesize"/>
-          <include name="validateAddClientFieldsDisplayed"/>
           <include name="setup"/>
+          <include name="validatePOSpurchase"/>
         </methods>
-      </class> <!-- com.mobileTest.AddClientTest -->
+      </class> <!-- com.mobileTest.POSTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

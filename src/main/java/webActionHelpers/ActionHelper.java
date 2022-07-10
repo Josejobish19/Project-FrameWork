@@ -1,24 +1,9 @@
 package webActionHelpers;
-
-import java.time.Duration;
 import org.openqa.selenium.WebDriver;
 
 public class ActionHelper {
 
 	
-	public void LaunchUrl(WebDriver driver , String url) {
-		
-		try {
-			driver.get(url);
-			driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
-			driver.manage().window().maximize();}
-		
-			catch (Exception e) {
-				
-				System.out.println("Exceptiom occured" +e);
-				// TODO: handle exception
-			}
-		}
 	public String getPageTitle(WebDriver driver ) {
 		String title = "";
 		try {

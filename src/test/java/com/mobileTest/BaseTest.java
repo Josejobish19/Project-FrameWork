@@ -1,55 +1,89 @@
 package com.mobileTest;
 
-import java.io.IOException;
-import java.util.Properties;
+
+
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.BeforeTest;
+import org.openqa.selenium.edge.EdgeDriver;
 
-import com.propertyDataHandler.PropertyDataHandler;
+
+import com.propertyDataHandler.PropertyDataHand;
+import com.utility.AutomationConstants;
+
 import webActionHelpers.ActionHelper;
+import webActionHelpers.BrowserHelper;
 
 
 public class BaseTest {
 	
- WebDriver driver;
-	 PropertyDataHandler prop = new PropertyDataHandler();
-	 ActionHelper ab  = new ActionHelper();
 
-	 @BeforeTest
-	public void launchChromeBrowser() throws IOException {
-			
-	
+	 PropertyDataHand prop = new PropertyDataHand();
+	 ActionHelper ab  = new ActionHelper();
+	 BrowserHelper browserHelp = new BrowserHelper();
+
+	 public static WebDriver driver;
+		
+		public WebDriver launchChromeBrowser()
+		{
+			try {
 			System.setProperty("webdriver.chrome.driver","D:\\chrome driver\\CHromeDriver_102\\chromedriver.exe");
-			driver = new ChromeDriver();
-			Properties allProp = prop.readPropertiesFile("configuration.properties");
-			
-		ab.navigateURL(driver, allProp.getProperty("URL"));
-		ab.windowMaximize(driver);
+			driver=new ChromeDriver();
+			driver.manage().window().maximize();
+			 BrowserHelper browserHelp = new BrowserHelper();
+			 browserHelp.launchUrl(driver,"chrome");
 			}
-	
-	
-
-	/* AutomationBase base;
-	 ActionHelper ab  = new ActionHelper();
-		
-		@BeforeTest
-		@Parameters("browserType")
-		public void launch(String browserType) throws Exception {
-			base = new AutomationBase();
-			base.launchBrowser(browserType);
-	
+			catch(Exception e)
+			{
+				System.out.println(e.getMessage());
+			}
+			return driver;
 			
 		}
-
-		@AfterTest
-		public void quitBrowser() {
-			
-			//ab.navigateQuit(driver);
-		}
-*/
 		
+		public WebDriver launchEdgeBrowser()
+		{
+			try {
+			System.setProperty("webdriver.edge.driver", "C:\\Users\\Jose.T\\Desktop\\work\\EdgeDriver\\msedgedriver.exe");
+			driver=new EdgeDriver();
+			driver.manage().window().maximize();
+			BrowserHelper browserHelp = new BrowserHelper();
+			 browserHelp.launchUrl(driver,"chrome");
+			if(driver==null)
+			{
+				System.out.println("***************launch browser");
+			}
+			
+			}
+			catch(Exception e)
+			{
+				System.out.println(e.getMessage());
+			}
+			
+			return driver;
+			
+		}
+	
+
+		public WebDriver launchBrowser(String browserName)
+		{
+			switch(browserName)
+			{
+			case "chrome" :
+				launchChromeBrowser();
+				break;
+			case "firefox":
+				launchEdgeBrowser();
+				break;
+
+			default:
+				System.out.println(AutomationConstants.CHECKBROWSER_MESSAGE);
+				break;
+			}
+			return driver;
+				
+		}
+			
 	}
 
 

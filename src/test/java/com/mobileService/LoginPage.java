@@ -1,9 +1,15 @@
 package com.mobileService;
 
+import java.io.IOException;
+import java.util.Properties;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import com.propertyDataHandler.PropertyDataHand;
+
 import webActionHelpers.ActionHelper;
 import webActionHelpers.AlertFrameWindowHelper;
 import webActionHelpers.MouseAction;
@@ -19,6 +25,9 @@ public class LoginPage {
 	MouseAction clickhelp = new MouseAction();
 	SendkeysActionHelper  Sendkey = new SendkeysActionHelper();
 	AlertFrameWindowHelper Alerthelp = new AlertFrameWindowHelper();
+	
+	String  Password1;
+	String Username1;
 	
 	@FindBy(xpath = "//input[@name=\"identity\"]")
 	WebElement username;
@@ -55,6 +64,15 @@ public boolean isUserNamefeildDisplayed() {
 		return password.isDisplayed();
 		
 	}
+	public void getUsernameAndPassword() throws IOException 
+	{
+		 PropertyDataHand prop = new PropertyDataHand();
+		 Properties allProp = prop.readPropertiesFile("configuration.properties");
+
+		 Username1=allProp.getProperty("UserName");
+		 Password1=allProp.getProperty("Password");
+	}
+	
 	
 	public void loginUsername(String Username1) {
 		Sendkey.clearAndsendkeys(driver, username, Username1);
@@ -80,8 +98,17 @@ public boolean isUserNamefeildDisplayed() {
 		clickhelp.mouseClick(driver, joesignout);
 	}
 	
+	public LoginPage login() throws IOException
+	{
 
-	
+		getUsernameAndPassword();
+		loginUsername(Username1);
+		loginPassword(Password1);
+		passSubmit.click();
+
+		return new LoginPage(driver);
+		
+	}
 	}
 
 

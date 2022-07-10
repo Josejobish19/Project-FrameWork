@@ -4,7 +4,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
-public class PropertyDataHandler {
+public class PropertyDataHand {
 	
 	public static final String currentDir = System.getProperty("user.dir");
 	public static final String filePath = currentDir + "/src/main/resources/";

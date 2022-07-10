@@ -1,21 +1,32 @@
 package webActionHelpers;
 
+import java.io.IOException;
+import java.util.Properties;
+
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+
+
+import com.propertyDataHandler.PropertyDataHand;
 
 public class BrowserHelper {
 WebDriver driver;
 	
-	public void chromeBrowser(WebDriver driver , String URL)
+public void launchUrl(WebDriver driver, String browserName) throws IOException
+{
+	try
 	{
-		try {
-			System.setProperty("webdriver.chrome.driver","D:\\chrome driver\\CHromeDriver_102\\chromedriver.exe");
-			driver = new ChromeDriver();
-		}
-		catch(Exception e) {
-			
-			System.out.println("Exception Occured"+e);
-			
-		}
-	}
+		
+		 PropertyDataHand prop = new PropertyDataHand();
+	 Properties allProp = prop.readPropertiesFile("configuration.properties");
+	 String url=allProp.getProperty("URL");
+	 driver.get(url);
+	
 }
+	catch(Exception e)
+	{
+		System.out.println("Exception occured "+e.getMessage());
+	}
+
+}
+	}
+

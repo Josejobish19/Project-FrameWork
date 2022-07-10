@@ -42,12 +42,22 @@ public class AddClient {
 	WebElement AddClientsubmitbutton;
 	@FindBy(xpath = "//button[contains(.,' Go Back')]")
 	WebElement AddClientGoBackbutton;
-	
+	@FindBy(xpath = "//div[@class=\"panel-body\"]")
+	WebElement switchframe;
+	@FindBy(xpath = "//li[contains(.,'This value is required.')]")
+	WebElement Emptyfeildmsg;
+	@FindBy(xpath = "//button[@id=\"modify_client\"]")
+	WebElement Sumitclientdataconform;
+	@FindBy(xpath = "//input[@type=\"search\" and @aria-controls=\"dynamic-table\"]")
+	WebElement ClientSearch;
+	@FindBy(xpath = "//tbody//tr[1]//td[7]//button[contains(.,'actions ')]")
+	WebElement Clientaction;
 	
 	
 	
 	 public AddClient(WebDriver driver)
 	 {
+		 this.driver=driver;
 		 PageFactory.initElements(driver, this);
 	 }  
 	
@@ -123,7 +133,67 @@ public class AddClient {
 	 public void addClientsubmitbutton()
 	 {
 		clickhelp.mouseClick(driver, AddClientsubmitbutton);
+		Sendkey.clearAndsendkeys(driver, AddClientname, "Jobish");
 		 
 	 }
-
+	 public void addClientnameedata(String name)
+	 {
+		
+		Sendkey.clearAndsendkeys(driver, AddClientname, name);
+		 
+	 }
+	 public void addClientcompanydata(String company)
+	 {
+		
+		Sendkey.clearAndsendkeys(driver, AddClientcompany, company);
+		 
+	 }
+	 public void addClientAddressdata(String address)
+	 {
+		
+		Sendkey.clearAndsendkeys(driver, AddClientAddress, address);
+		 
+	 }
+	 public void addClientcitydata(String city)
+	 {
+		
+		Sendkey.clearAndsendkeys(driver, AddClientcity, city);
+		 
+	 }
+	 public void addClientphonedata(String phone)
+	 {
+		
+		Sendkey.clearAndsendkeys(driver, AddClientphone, phone);
+		 
+	 }
+	 public void addClientemaildata(String email)
+	 {
+		
+		Sendkey.clearAndsendkeys(driver, AddClientemail, email);
+		 
+	 }
+	 public boolean isEmptyclientdetailsubmitdisplayed()
+	 {
+		 return Emptyfeildmsg.isDisplayed();
+	 }
+	 public void addClientsubmit()
+	 {
+		 AddClientsubmitbutton.click();
+		 
+	 }
+	 public boolean isclientdetailsubmiconfrmtdisplayed()
+	 {
+		return Sumitclientdataconform.isDisplayed();
+	 }
+public void enterdeleteSerch(String name)
+{
+	ClientSearch.sendKeys(name);
+	Clientaction.click();
+}
+public void clickclientdelete()
+{
+	Clientaction.click();
+}
+	 
+	 
 }

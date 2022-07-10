@@ -14,7 +14,7 @@ import webActionHelpers.MouseAction;
 import webActionHelpers.SendkeysActionHelper;
 
 
-public class MobileClient {
+public class MobileClientPage {
 	
 	WebDriver driver;
 	ActionHelper actionhelp  = new ActionHelper();
@@ -24,7 +24,7 @@ public class MobileClient {
 	GetTableSizeList Gettablehelp = new GetTableSizeList();
 	
 	
-	@FindBy(xpath = "//h1[contains(.,'Customers')]")
+	@FindBy(xpath = "//section//h1[contains(.,'Customers')]")
 	WebElement Customers;
 	@FindBy(xpath = "//button[contains(.,' Add Client    ')]")
 	WebElement AddClientButton;
@@ -34,12 +34,11 @@ public class MobileClient {
 	WebElement Changecolumns;
 	@FindBy(xpath = "//span[contains(.,'Clients')]")
 	WebElement Clients;
-	@FindBy(xpath = "//input[@type=\"search\"and@aria-controls=\"dynamic-table\"]")
+	@FindBy(xpath = "//input[@type=\"search\" and @aria-controls=\"dynamic-table\"]")
 	WebElement ClientSearch;
-	
-	@FindBy(xpath = "//div//tr[1]")
+    @FindBy(xpath = "//div//tr[1]")
 	List<WebElement> tableClientsize;
-	@FindBy(xpath = "//tr//td[contains(.,'Jobish ')]")
+	@FindBy(xpath = "//*[@id=\\\"dynamic-table\\\"]/tbody/tr\")")
 	WebElement tableClientresult;
 	@FindBy(xpath = "//input[@name=\"identity\"]")
 	WebElement username;
@@ -47,7 +46,7 @@ public class MobileClient {
 	WebElement password;
 	@FindBy(xpath = "//input[@name=\"submit\"]")
 	WebElement passSubmit;
-	@FindBy(xpath = "//a[@class=\"dropdown-toggle btn-round btn btn-default\"]")
+	@FindBy(xpath = "//div//li//a[@class=\"dropdown-toggle btn-round btn btn-default\"]")
 	WebElement clientActionsbutton;
 	@FindBy(xpath = "//a[contains(.,' Export to Excel file                    ')]")
 	WebElement ExporttoExcelfilebutton;
@@ -59,9 +58,9 @@ public class MobileClient {
 	WebElement DeleteSelectedbutton;
 	
 	
-public  MobileClient(WebDriver driver)
+public  MobileClientPage(WebDriver driver)
 {
-	this.driver= driver;
+this.driver = driver;
 	PageFactory.initElements(driver,this);
 }
 
@@ -127,17 +126,21 @@ public boolean isDeleteSelectedbuttondisplayed()
 {
 	return DeleteSelectedbutton.isDisplayed();
 }
-public void clickClientAction() throws Exception
+public void clickClientAction() 
 {
 	
-	clickhelp.doubleClick(driver, clientActionsbutton);
+	clickhelp.mouseClick(driver, clientActionsbutton);
 }
-public MobileClient login(String username1 , String pwd1)
+public void clickClientAdd()  
 {
-	Sendkey.clearAndsendkeys(driver, username , username1);
-	Sendkey.clearAndsendkeys(driver, password , pwd1);
-	clickhelp.mouseClick(driver, passSubmit);
-	return new MobileClient(driver);
 	
+	clickhelp.mouseClick(driver, AddClientButton);
 }
+public MobileClientPage clientsbut()
+{
+	Clients.click();
+	return new MobileClientPage(driver);
+}
+
+
 }

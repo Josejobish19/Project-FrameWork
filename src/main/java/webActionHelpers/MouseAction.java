@@ -10,16 +10,19 @@ public class MouseAction {
 	Actions act; 
 	public void mouseClick(WebDriver driver , WebElement dragableButton)
 	{
-		act = new Actions(driver);
+		Actions act = new Actions(driver);
 		try {
 			act.moveToElement(dragableButton).click().build().perform();
+			System.out.println("******************************");
+			System.out.println("successfully clicked on "+dragableButton.getText());
 		}
 		catch (Exception e) {
+			System.out.println("******************************");
+			System.out.println("failed to clicked on "+dragableButton.getText());
 
-			System.out.println("Exceptiom occured" +e);
-			// TODO: handle exception
 		}
 	}
+	
 	
 	public void  mouseDragDrop(WebDriver driver , WebElement source ,int a , int b  )
 	{
