@@ -3,11 +3,7 @@ package com.mobileTest;
 
 
 import java.io.IOException;
-import java.util.List;
 import java.util.Properties;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;

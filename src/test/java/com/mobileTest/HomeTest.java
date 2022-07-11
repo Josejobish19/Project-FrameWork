@@ -141,8 +141,6 @@ PropertyDataHand prop = new PropertyDataHand();
 
 	
 @AfterMethod
-
-
 	public void Close()
 	{
 

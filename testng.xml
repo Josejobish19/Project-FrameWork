@@ -7,14 +7,12 @@
     <classes>
 
  <class name="com.mobileTest.POSTest"/>
- 
-     <!-- 
-<class name="com.mobileTest.SystemUserTest"/>
  <class name="com.mobileTest.POSTest"/>
-      <class name="com.mobileTest.ClientTest"/>  -->
-       <!-- <class name="com.mobileTest.HomeTest"/>
+      <class name="com.mobileTest.ClientTest"/> 
+        <class name="com.mobileTest.HomeTest"/>
       <class name="com.mobileTest.AddClientTest"/>
-      <class name="com.mobileTest.LoginTest"/> -->
+      <class name="com.mobileTest.LoginTest"/>
+<!-- -->
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

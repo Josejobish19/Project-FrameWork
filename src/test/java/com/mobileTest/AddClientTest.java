@@ -2,7 +2,6 @@ package com.mobileTest;
 
 
 
-import static org.testng.Assert.assertEquals;
 
 import java.io.IOException;
 
@@ -104,7 +103,7 @@ public class AddClientTest extends BaseTest  {
 	@AfterMethod
 	public void quitBrowser()
 	{
-		//driver.quit();
+		driver.quit();
 	
 }
 }

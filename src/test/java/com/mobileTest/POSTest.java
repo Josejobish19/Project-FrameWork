@@ -1,16 +1,19 @@
 package com.mobileTest;
 
-import static org.testng.Assert.assertTrue;
+
 
 import java.io.IOException;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import com.mobileService.AddClient;
 import com.mobileService.LoginPage;
 import com.mobileService.MobileClientPage;
+import com.mobileService.MobileHomePage;
 import com.mobileService.POSpage;
 
 public class POSTest extends BaseTest
@@ -18,6 +21,8 @@ public class POSTest extends BaseTest
 	MobileClientPage client ;
 	LoginPage loginPage;
 	POSpage pospage;
+	MobileHomePage homepage;
+	AddClient addclientpage;
 	public POSTest ()
 	{
 		super();
@@ -28,46 +33,53 @@ public class POSTest extends BaseTest
 		driver = launchBrowser(browserType);
 		loginPage = new LoginPage(driver);
 		pospage = new POSpage(driver);
+		homepage = new MobileHomePage(driver);
+		client = new MobileClientPage(driver);
 		loginPage.login();
 		pospage.clickPOS();
 		
 		 
 	}   
-	@Test(priority =0,enabled = true)
+	@Test(priority =24,enabled = true)
 	public void validatePOSfeilds()
 	{
+		pospage = new POSpage(driver);
 		Assert.assertTrue(pospage.isScanSerchFeildDisplayed());
 		Assert.assertTrue(pospage.isSelectClientFeildDisplayed());
 	
 		
 	}
-	@Test(priority =1,enabled = true)
+	@Test(priority =25,enabled = true)
 	public void validateSelectFeild() throws Exception
 	{
+		pospage = new POSpage(driver);
 		pospage.selectClient();
 		Assert.assertTrue(pospage.isSelectClientnameDisplayed());
 	
 	}
-	@Test(priority =2,enabled = true)
+	@Test(priority =26,enabled = true)
 	public void validatePOSpurchaseClearSale() throws Exception
 	{
+		pospage = new POSpage(driver);
 		pospage.selectClient();
 		Assert.assertTrue(pospage.isSelectClientnameDisplayed());
 		pospage.selectPurchase();
 		pospage.clearPurchase();
 	}
 	
-	@Test(priority =3,enabled = true)
+	@Test(priority =27,enabled = true)
 	public void validateProductAddeddisplayed() throws Exception
 	{
+		pospage = new POSpage(driver);
 		pospage.selectClient();
 		Assert.assertTrue(pospage.isSelectClientnameDisplayed());
 		pospage.selectPurchase();
 		Assert.assertTrue(pospage.isProductaddedDisplayed());
 	}
-	@Test(priority =4,enabled = true)
+	@Test(priority =28,enabled = true)
 	public void validateProductAddedWithoutSelectclient() throws Exception
 	{
+		pospage = new POSpage(driver);
 		
 		pospage.selectPurchase();
 		Assert.assertTrue(pospage.isProductaddedDisplayed());
@@ -75,9 +87,10 @@ public class POSTest extends BaseTest
 		pospage.purchaseAlertOkay();
 	}
 	
-	@Test(priority =5,enabled = true)
+	@Test(priority =29,enabled = true)
 	public void validatePOSpurchase() throws Exception
 	{
+		pospage = new POSpage(driver);
 		pospage.selectClient();
 		Assert.assertTrue(pospage.isSelectClientnameDisplayed());
 		pospage.selectPurchase();
@@ -85,6 +98,12 @@ public class POSTest extends BaseTest
 		pospage.purchaseAlertOkay();
 	}
 	
+	@AfterMethod
+	public void quitBrowser()
+	{
+		driver.quit();
+	
+}
 		
 	
 
