@@ -5,8 +5,14 @@
     <classes>
       <class name="com.mobileTest.POSTest">
         <methods>
+          <include name="validatePOSfeilds"/>
+          <include name="validateSelectFeild"/>
+          <include name="validateProductAddeddisplayed"/>
+          <include name="validateProductAddedWithoutSelectclient"/>
           <include name="setup"/>
           <include name="validatePOSpurchase"/>
+          <include name="validatePOSpurchaseClearSale"/>
+          <include name="quitBrowser"/>
         </methods>
       </class> <!-- com.mobileTest.POSTest -->
     </classes>
