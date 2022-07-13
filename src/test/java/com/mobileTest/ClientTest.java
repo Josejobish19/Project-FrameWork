@@ -69,7 +69,7 @@ public  class ClientTest  extends  BaseTest {
 				System.out.println("Total size is "+client.tableClientsize1());
 	}
 	
-	@Test(priority = 17)
+	@Test(priority = 17,groups = "sanity")
 	public void validateClientSerchResult() throws Throwable  {
 		
 PropertyDataHand prop = new PropertyDataHand();
@@ -93,13 +93,8 @@ PropertyDataHand prop = new PropertyDataHand();
 	public void validateClientActionbuttons() throws InterruptedException {
 		
 		client.clickClientAction();
-		SoftAssert soft = new SoftAssert();
-		soft.assertTrue(client.isDeleteSelectedbuttondisplayed(),"Element is not displayed");
-		soft.assertTrue(client.isclientActionsbuttondisplayed(),"Element is not displayed");
-		soft.assertTrue(client.isExporttoExcelfilebuttondisplayed(),"Element is not displayed");
-		soft.assertTrue(client.isExporttoPDFfilebuttondisplayed(),"Element is not displayed");
-		soft.assertTrue(client.isAddCustomersbyCSVbuttondisplayed(),"Element is not displayed");
-		soft.assertAll();
+		Assert.assertTrue(client.isclientActionsbuttondisplayed(),"clientActionsbutton Element is not displayed");
+		
 	
 		
 	}

@@ -48,7 +48,7 @@ public class BaseTest {
 			driver=new EdgeDriver();
 			driver.manage().window().maximize();
 			BrowserHelper browserHelp = new BrowserHelper();
-			 browserHelp.launchUrl(driver,"chrome");
+			 browserHelp.launchUrl(driver,"edge");
 			if(driver==null)
 			{
 				System.out.println("***************launch browser");
@@ -72,7 +72,7 @@ public class BaseTest {
 			case "chrome" :
 				launchChromeBrowser();
 				break;
-			case "firefox":
+			case "edge":
 				launchEdgeBrowser();
 				break;
 

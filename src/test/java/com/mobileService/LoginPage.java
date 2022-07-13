@@ -29,14 +29,14 @@ public class LoginPage {
 	String  Password1;
 	String Username1;
 	
-	@FindBy(xpath = "//input[@name=\"identity\"]")
+	@FindBy(xpath = "//div/input[@name=\"identity\"]")
 	WebElement username;
 	@FindBy(xpath = "//input[@name=\"password\"]")
 	WebElement password;
 	@FindBy(xpath = "//input[@name=\"remember\"]")
 	WebElement passReminder;
 	
-	@FindBy(xpath = "//input[@name=\"submit\"]")
+	@FindBy(xpath = "//div//input[@name=\"submit\"]")
 	WebElement passSubmit;
 	@FindBy(xpath = "//p[contains(.,'Logged In Successfully')]")
 	WebElement loggedSuccessful;
@@ -85,7 +85,7 @@ public boolean isUserNamefeildDisplayed() {
 	public void loginButtonandSavePassword()
 	{
 		clickhelp.mouseClick(driver, passReminder);
-		clickhelp.mouseClick(driver, passSubmit);
+		passSubmit.click();
 	}
 	
 	public boolean isLogSuccessMessageDispalyed()

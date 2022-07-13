@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Default test(failed)">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Mobile Sevice(failed)">
+    <parameter name="browserType" value="chrome"/>
+    <groups>
+      <run>
+        <include name="sanity"/>
+      </run>
+    </groups>
     <classes>
-      <class name="com.mobileTest.POSTest">
+      <class name="com.mobileTest.ClientTest">
         <methods>
-          <include name="validatePOSfeilds"/>
-          <include name="validateSelectFeild"/>
-          <include name="validateProductAddeddisplayed"/>
-          <include name="validateProductAddedWithoutSelectclient"/>
-          <include name="setup"/>
-          <include name="validatePOSpurchase"/>
-          <include name="validatePOSpurchaseClearSale"/>
-          <include name="quitBrowser"/>
+          <include name="validateClientSerchResult"/>
         </methods>
-      </class> <!-- com.mobileTest.POSTest -->
+      </class> <!-- com.mobileTest.ClientTest -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- Mobile Sevice(failed) -->
+</suite> <!-- Failed suite [Suite] -->

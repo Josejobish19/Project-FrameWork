@@ -6,6 +6,7 @@ import java.io.IOException;
 
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeGroups;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -40,6 +41,8 @@ public class POSTest extends BaseTest
 		
 		 
 	}   
+	
+ 
 	@Test(priority =24,enabled = true)
 	public void validatePOSfeilds()
 	{
@@ -49,7 +52,7 @@ public class POSTest extends BaseTest
 	
 		
 	}
-	@Test(priority =25,enabled = true)
+	@Test(priority =25,enabled = true )
 	public void validateSelectFeild() throws Exception
 	{
 		pospage = new POSpage(driver);
@@ -57,7 +60,7 @@ public class POSTest extends BaseTest
 		Assert.assertTrue(pospage.isSelectClientnameDisplayed());
 	
 	}
-	@Test(priority =26,enabled = true)
+	@Test(priority =26,enabled = true )
 	public void validatePOSpurchaseClearSale() throws Exception
 	{
 		pospage = new POSpage(driver);
@@ -67,7 +70,7 @@ public class POSTest extends BaseTest
 		pospage.clearPurchase();
 	}
 	
-	@Test(priority =27,enabled = true)
+	@Test(priority =27,enabled = true )
 	public void validateProductAddeddisplayed() throws Exception
 	{
 		pospage = new POSpage(driver);

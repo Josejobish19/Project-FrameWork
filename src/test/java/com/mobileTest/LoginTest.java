@@ -4,6 +4,7 @@ package com.mobileTest;
 
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeGroups;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -36,7 +37,16 @@ public void setup(String browserType) {
 		loginpage = new LoginPage(driver);
 			}
 
-	@Test(priority = 1)
+
+@Parameters("browserType")
+@BeforeGroups(groups = "sanity")
+public void grouping(String browserType) {
+	driver = launchBrowser(browserType);
+		loginpage = new LoginPage(driver);
+		
+			}
+
+	@Test(priority = 1,groups = "sanity")
 	public void  validateURL(){
 		
 	
@@ -46,7 +56,7 @@ public void setup(String browserType) {
 		
          Assert.assertEquals(Actual, Expected,"Incorrect URL");
 			}
-	@Test(priority = 2)
+	@Test(priority = 2,groups = "sanity")
 	public void validateareUsernameAndPasswordFieldsDisplayed() throws Exception
 	{
 		
@@ -54,7 +64,7 @@ public void setup(String browserType) {
 		Assert.assertTrue(loginpage.isPasswordfeildDisplayed(),"Unable to find password feild");
 	
 	}
-	@Test(priority = 3)
+	@Test(priority = 3,groups = "sanity")
 	public void validateValidLogin() throws IOException
 	{
 		Properties allProp = prop.readPropertiesFile("configuration.properties");
