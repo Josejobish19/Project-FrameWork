@@ -17,10 +17,11 @@ import com.mobileService.LoginPage;
 import com.mobileService.MobileClientPage;
 import com.mobileService.MobileHomePage;
 import com.propertyDataHandler.ExcelHandler;
+import automationBase.AutomationBase;
 
 
 
-public class AddClientTest extends BaseTest  {
+public class AddClientTest extends AutomationBase  {
 	
 	
 	MobileClientPage client;

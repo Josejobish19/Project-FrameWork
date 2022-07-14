@@ -6,7 +6,7 @@ import java.io.IOException;
 
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeGroups;
+
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -17,7 +17,9 @@ import com.mobileService.MobileClientPage;
 import com.mobileService.MobileHomePage;
 import com.mobileService.POSpage;
 
-public class POSTest extends BaseTest
+import automationBase.AutomationBase;
+
+public class POSTest extends AutomationBase
 {
 	MobileClientPage client ;
 	LoginPage loginPage;

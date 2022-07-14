@@ -15,10 +15,12 @@ import com.mobileService.MobileClientPage;
 import com.mobileService.MobileHomePage;
 import com.propertyDataHandler.PropertyDataHand;
 
+import automationBase.AutomationBase;
 
 
 
-public  class ClientTest  extends  BaseTest {
+
+public  class ClientTest  extends  AutomationBase {
 	
 	MobileClientPage client ;
 	LoginPage loginPage;

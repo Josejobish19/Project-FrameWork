@@ -63,8 +63,9 @@ public class BaseTest {
 			return driver;
 			
 		}
-	
-
+		public static WebDriver getDriver() {
+			return driver;
+		}
 		public WebDriver launchBrowser(String browserName)
 		{
 			switch(browserName)

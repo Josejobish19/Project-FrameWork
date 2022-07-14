@@ -17,13 +17,14 @@ import com.mobileService.LoginPage;
 
 import com.propertyDataHandler.PropertyDataHand;
 
+import automationBase.AutomationBase;
 import webActionHelpers.GetTableSizeList;
 
-public class LoginTest extends BaseTest{
+public class LoginTest extends AutomationBase{
 	
 	 PropertyDataHand prop = new PropertyDataHand();
 	LoginPage loginpage;
-	GetTableSizeList ts = new GetTableSizeList();
+	GetTableSizeList TableSize = new GetTableSizeList();
 
 	public LoginTest()
 	{

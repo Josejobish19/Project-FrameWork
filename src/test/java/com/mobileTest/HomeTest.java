@@ -15,7 +15,9 @@ import com.mobileService.LoginPage;
 import com.mobileService.MobileHomePage;
 import com.propertyDataHandler.PropertyDataHand;
 
-public class HomeTest extends BaseTest {
+import automationBase.AutomationBase;
+
+public class HomeTest extends AutomationBase {
 	
 	
 	MobileHomePage homepage;

@@ -1,26 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="25" total="29" passed="3" failed="1" skipped="0">
+<testng-results ignored="3" total="13" passed="7" failed="3" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-07-13T15:31:29 IST" name="Suite" finished-at="2022-07-13T15:32:02 IST" duration-ms="33528">
+  <suite started-at="2022-07-14T15:43:53 IST" name="Suite" finished-at="2022-07-14T15:47:03 IST" duration-ms="190395">
     <groups>
       <group name="sanity">
-        <method signature="ClientTest.validateClientSerchResult()[pri:17, instance:com.mobileTest.ClientTest@242b836]" name="validateClientSerchResult" class="com.mobileTest.ClientTest"/>
-        <method signature="LoginTest.validateURL()[pri:1, instance:com.mobileTest.LoginTest@130c12b7]" name="validateURL" class="com.mobileTest.LoginTest"/>
-        <method signature="LoginTest.validateValidLogin()[pri:3, instance:com.mobileTest.LoginTest@130c12b7]" name="validateValidLogin" class="com.mobileTest.LoginTest"/>
-        <method signature="LoginTest.validateareUsernameAndPasswordFieldsDisplayed()[pri:2, instance:com.mobileTest.LoginTest@130c12b7]" name="validateareUsernameAndPasswordFieldsDisplayed" class="com.mobileTest.LoginTest"/>
+        <method signature="LoginTest.validateURL()[pri:1, instance:com.mobileTest.LoginTest@66f57048]" name="validateURL" class="com.mobileTest.LoginTest"/>
+        <method signature="LoginTest.validateValidLogin()[pri:3, instance:com.mobileTest.LoginTest@66f57048]" name="validateValidLogin" class="com.mobileTest.LoginTest"/>
+        <method signature="LoginTest.validateareUsernameAndPasswordFieldsDisplayed()[pri:2, instance:com.mobileTest.LoginTest@66f57048]" name="validateareUsernameAndPasswordFieldsDisplayed" class="com.mobileTest.LoginTest"/>
       </group> <!-- sanity -->
     </groups>
-    <test started-at="2022-07-13T15:31:29 IST" name="Mobile Sevice" finished-at="2022-07-13T15:32:02 IST" duration-ms="33528">
-      <class name="com.mobileTest.ClientTest">
-        <test-method signature="validateClientSerchResult()[pri:17, instance:com.mobileTest.ClientTest@242b836]" started-at="2022-07-13T15:31:53 IST" name="validateClientSerchResult" finished-at="2022-07-13T15:31:53 IST" duration-ms="75" status="FAIL">
-          <exception class="java.lang.NullPointerException">
+    <test started-at="2022-07-14T15:43:53 IST" name="Mobile Sevice" finished-at="2022-07-14T15:47:03 IST" duration-ms="190395">
+      <class name="com.mobileTest.AddClientTest">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.mobileTest.AddClientTest@4d154ccd]" started-at="2022-07-14T15:46:39 IST" name="setup" finished-at="2022-07-14T15:47:02 IST" duration-ms="23174" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="ValidateclientDelete()[pri:22, instance:com.mobileTest.AddClientTest@4d154ccd]" started-at="2022-07-14T15:47:02 IST" name="ValidateclientDelete" finished-at="2022-07-14T15:47:02 IST" duration-ms="194" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[Cannot invoke "com.mobileService.MobileClientPage.clientsearchResult(String)" because "this.client" is null]]>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//tbody//tr[1]//td[7]//button[contains(.,'actions ')]"}
+  (Session info: chrome=103.0.5060.114)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.1.4', revision: '535d840ee2'
+System info: host: 'JOSE', ip: '192.168.50.164', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [aa75909f62bdb40a556814e954aa1b55, findElement {using=xpath, value=//tbody//tr[1]//td[7]//button[contains(.,'actions ')]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 103.0.5060.114, chrome: {chromedriverVersion: 103.0.5060.53 (a1711811edd7..., userDataDir: C:\Users\Jose.T\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:59408}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59408/devtoo..., se:cdpVersion: 103.0.5060.114, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: aa75909f62bdb40a556814e954aa1b55]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "com.mobileService.MobileClientPage.clientsearchResult(String)" because "this.client" is null
-at com.mobileTest.ClientTest.validateClientSerchResult(ClientTest.java:79)
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//tbody//tr[1]//td[7]//button[contains(.,'actions ')]"}
+  (Session info: chrome=103.0.5060.114)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.1.4', revision: '535d840ee2'
+System info: host: 'JOSE', ip: '192.168.50.164', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [aa75909f62bdb40a556814e954aa1b55, findElement {using=xpath, value=//tbody//tr[1]//td[7]//button[contains(.,'actions ')]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 103.0.5060.114, chrome: {chromedriverVersion: 103.0.5060.53 (a1711811edd7..., userDataDir: C:\Users\Jose.T\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:59408}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59408/devtoo..., se:cdpVersion: 103.0.5060.114, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: aa75909f62bdb40a556814e954aa1b55
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:567)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:385)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:377)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+at jdk.proxy2/jdk.proxy2.$Proxy19.click(Unknown Source)
+at com.mobileService.AddClient.enterdeleteSerch(AddClient.java:191)
+at com.mobileTest.AddClientTest.ValidateclientDelete(AddClientTest.java:97)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -51,13 +97,17 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validateClientSerchResult -->
-      </class> <!-- com.mobileTest.ClientTest -->
-      <class name="com.mobileTest.LoginTest">
-        <test-method is-config="true" signature="grouping(java.lang.String)[pri:0, instance:com.mobileTest.LoginTest@130c12b7]" started-at="2022-07-13T15:31:29 IST" name="grouping" finished-at="2022-07-13T15:31:53 IST" duration-ms="23744" status="PASS">
+        </test-method> <!-- ValidateclientDelete -->
+        <test-method is-config="true" signature="quitBrowser()[pri:0, instance:com.mobileTest.AddClientTest@4d154ccd]" started-at="2022-07-14T15:47:03 IST" name="quitBrowser" finished-at="2022-07-14T15:47:03 IST" duration-ms="368" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitBrowser -->
+      </class> <!-- com.mobileTest.AddClientTest -->
+      <class name="com.mobileTest.POSTest">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.mobileTest.POSTest@25641d39]" started-at="2022-07-14T15:44:37 IST" name="setup" finished-at="2022-07-14T15:44:53 IST" duration-ms="15708" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -67,19 +117,317 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- grouping -->
-        <test-method signature="validateURL()[pri:1, instance:com.mobileTest.LoginTest@130c12b7]" started-at="2022-07-13T15:31:53 IST" name="validateURL" finished-at="2022-07-13T15:31:53 IST" duration-ms="66" status="PASS">
+        </test-method> <!-- setup -->
+        <test-method signature="validatePOSfeilds()[pri:24, instance:com.mobileTest.POSTest@25641d39]" started-at="2022-07-14T15:44:53 IST" name="validatePOSfeilds" finished-at="2022-07-14T15:44:53 IST" duration-ms="117" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validatePOSfeilds -->
+        <test-method is-config="true" signature="quitBrowser()[pri:0, instance:com.mobileTest.POSTest@25641d39]" started-at="2022-07-14T15:44:53 IST" name="quitBrowser" finished-at="2022-07-14T15:44:53 IST" duration-ms="347" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitBrowser -->
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.mobileTest.POSTest@25641d39]" started-at="2022-07-14T15:44:53 IST" name="setup" finished-at="2022-07-14T15:45:11 IST" duration-ms="17277" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="validateSelectFeild()[pri:25, instance:com.mobileTest.POSTest@25641d39]" started-at="2022-07-14T15:45:11 IST" name="validateSelectFeild" finished-at="2022-07-14T15:45:11 IST" duration-ms="212" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateSelectFeild -->
+        <test-method is-config="true" signature="quitBrowser()[pri:0, instance:com.mobileTest.POSTest@25641d39]" started-at="2022-07-14T15:45:11 IST" name="quitBrowser" finished-at="2022-07-14T15:45:11 IST" duration-ms="289" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitBrowser -->
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.mobileTest.POSTest@25641d39]" started-at="2022-07-14T15:45:11 IST" name="setup" finished-at="2022-07-14T15:45:30 IST" duration-ms="19064" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="validatePOSpurchaseClearSale()[pri:26, instance:com.mobileTest.POSTest@25641d39]" started-at="2022-07-14T15:45:30 IST" name="validatePOSpurchaseClearSale" finished-at="2022-07-14T15:45:31 IST" duration-ms="410" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validatePOSpurchaseClearSale -->
+        <test-method is-config="true" signature="quitBrowser()[pri:0, instance:com.mobileTest.POSTest@25641d39]" started-at="2022-07-14T15:45:31 IST" name="quitBrowser" finished-at="2022-07-14T15:45:31 IST" duration-ms="334" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitBrowser -->
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.mobileTest.POSTest@25641d39]" started-at="2022-07-14T15:45:31 IST" name="setup" finished-at="2022-07-14T15:45:48 IST" duration-ms="17066" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="validateProductAddeddisplayed()[pri:27, instance:com.mobileTest.POSTest@25641d39]" started-at="2022-07-14T15:45:48 IST" name="validateProductAddeddisplayed" finished-at="2022-07-14T15:45:48 IST" duration-ms="427" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateProductAddeddisplayed -->
+        <test-method is-config="true" signature="quitBrowser()[pri:0, instance:com.mobileTest.POSTest@25641d39]" started-at="2022-07-14T15:45:48 IST" name="quitBrowser" finished-at="2022-07-14T15:45:49 IST" duration-ms="369" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitBrowser -->
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.mobileTest.POSTest@25641d39]" started-at="2022-07-14T15:45:49 IST" name="setup" finished-at="2022-07-14T15:46:19 IST" duration-ms="30249" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="validateProductAddedWithoutSelectclient()[pri:28, instance:com.mobileTest.POSTest@25641d39]" started-at="2022-07-14T15:46:19 IST" name="validateProductAddedWithoutSelectclient" finished-at="2022-07-14T15:46:19 IST" duration-ms="376" status="FAIL">
+          <exception class="org.openqa.selenium.ElementNotInteractableException">
+            <message>
+              <![CDATA[element not interactable
+  (Session info: chrome=103.0.5060.114)
+Build info: version: '4.1.4', revision: '535d840ee2'
+System info: host: 'JOSE', ip: '192.168.50.164', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [b982fae2bce5d01cce289157d80d8fa6, clickElement {id=8001be77-506f-45d4-9cc8-bc41752e48c9}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 103.0.5060.114, chrome: {chromedriverVersion: 103.0.5060.53 (a1711811edd7..., userDataDir: C:\Users\Jose.T\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:59290}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59290/devtoo..., se:cdpVersion: 103.0.5060.114, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (b982fae2bce5d01cce289157d80d8fa6)] -> xpath: //body/div[12]/div/div/div[1]/div]
+Session ID: b982fae2bce5d01cce289157d80d8fa6]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=103.0.5060.114)
+Build info: version: '4.1.4', revision: '535d840ee2'
+System info: host: 'JOSE', ip: '192.168.50.164', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [b982fae2bce5d01cce289157d80d8fa6, clickElement {id=8001be77-506f-45d4-9cc8-bc41752e48c9}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 103.0.5060.114, chrome: {chromedriverVersion: 103.0.5060.53 (a1711811edd7..., userDataDir: C:\Users\Jose.T\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:59290}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59290/devtoo..., se:cdpVersion: 103.0.5060.114, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (b982fae2bce5d01cce289157d80d8fa6)] -> xpath: //body/div[12]/div/div/div[1]/div]
+Session ID: b982fae2bce5d01cce289157d80d8fa6
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:567)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:251)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
+at jdk.internal.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
+at jdk.proxy2/jdk.proxy2.$Proxy19.click(Unknown Source)
+at com.mobileService.POSpage.purchaseAlertOkay(POSpage.java:113)
+at com.mobileTest.POSTest.validateProductAddedWithoutSelectclient(POSTest.java:92)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.ElementNotInteractableException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateProductAddedWithoutSelectclient -->
+        <test-method is-config="true" signature="quitBrowser()[pri:0, instance:com.mobileTest.POSTest@25641d39]" started-at="2022-07-14T15:46:20 IST" name="quitBrowser" finished-at="2022-07-14T15:46:20 IST" duration-ms="323" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitBrowser -->
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.mobileTest.POSTest@25641d39]" started-at="2022-07-14T15:46:20 IST" name="setup" finished-at="2022-07-14T15:46:38 IST" duration-ms="17929" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="validatePOSpurchase()[pri:29, instance:com.mobileTest.POSTest@25641d39]" started-at="2022-07-14T15:46:38 IST" name="validatePOSpurchase" finished-at="2022-07-14T15:46:38 IST" duration-ms="329" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//body/div[12]/div/div/div[1]/div"}
+  (Session info: chrome=103.0.5060.114)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.1.4', revision: '535d840ee2'
+System info: host: 'JOSE', ip: '192.168.50.164', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [5be208889f751b3759dd441eb09d12d0, findElement {using=xpath, value=//body/div[12]/div/div/div[1]/div}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 103.0.5060.114, chrome: {chromedriverVersion: 103.0.5060.53 (a1711811edd7..., userDataDir: C:\Users\Jose.T\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:59359}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59359/devtoo..., se:cdpVersion: 103.0.5060.114, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 5be208889f751b3759dd441eb09d12d0]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//body/div[12]/div/div/div[1]/div"}
+  (Session info: chrome=103.0.5060.114)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.1.4', revision: '535d840ee2'
+System info: host: 'JOSE', ip: '192.168.50.164', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [5be208889f751b3759dd441eb09d12d0, findElement {using=xpath, value=//body/div[12]/div/div/div[1]/div}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 103.0.5060.114, chrome: {chromedriverVersion: 103.0.5060.53 (a1711811edd7..., userDataDir: C:\Users\Jose.T\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:59359}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59359/devtoo..., se:cdpVersion: 103.0.5060.114, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 5be208889f751b3759dd441eb09d12d0
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:567)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:385)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:377)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+at jdk.proxy2/jdk.proxy2.$Proxy19.isDisplayed(Unknown Source)
+at com.mobileService.POSpage.isaddclientalrtdDisplayed(POSpage.java:109)
+at com.mobileTest.POSTest.validatePOSpurchase(POSTest.java:102)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validatePOSpurchase -->
+        <test-method is-config="true" signature="quitBrowser()[pri:0, instance:com.mobileTest.POSTest@25641d39]" started-at="2022-07-14T15:46:39 IST" name="quitBrowser" finished-at="2022-07-14T15:46:39 IST" duration-ms="312" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitBrowser -->
+      </class> <!-- com.mobileTest.POSTest -->
+      <class name="com.mobileTest.LoginTest">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.mobileTest.LoginTest@66f57048]" started-at="2022-07-14T15:43:53 IST" name="setup" finished-at="2022-07-14T15:44:12 IST" duration-ms="18460" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="validateURL()[pri:1, instance:com.mobileTest.LoginTest@66f57048]" started-at="2022-07-14T15:44:12 IST" name="validateURL" finished-at="2022-07-14T15:44:12 IST" duration-ms="46" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateURL -->
-        <test-method signature="validateareUsernameAndPasswordFieldsDisplayed()[pri:2, instance:com.mobileTest.LoginTest@130c12b7]" started-at="2022-07-13T15:31:53 IST" name="validateareUsernameAndPasswordFieldsDisplayed" finished-at="2022-07-13T15:31:53 IST" duration-ms="282" status="PASS">
+        <test-method is-config="true" signature="quitBrowser()[pri:0, instance:com.mobileTest.LoginTest@66f57048]" started-at="2022-07-14T15:44:12 IST" name="quitBrowser" finished-at="2022-07-14T15:44:12 IST" duration-ms="521" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitBrowser -->
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.mobileTest.LoginTest@66f57048]" started-at="2022-07-14T15:44:12 IST" name="setup" finished-at="2022-07-14T15:44:22 IST" duration-ms="9796" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="validateareUsernameAndPasswordFieldsDisplayed()[pri:2, instance:com.mobileTest.LoginTest@66f57048]" started-at="2022-07-14T15:44:22 IST" name="validateareUsernameAndPasswordFieldsDisplayed" finished-at="2022-07-14T15:44:22 IST" duration-ms="128" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateareUsernameAndPasswordFieldsDisplayed -->
-        <test-method signature="validateValidLogin()[pri:3, instance:com.mobileTest.LoginTest@130c12b7]" started-at="2022-07-13T15:31:53 IST" name="validateValidLogin" finished-at="2022-07-13T15:32:02 IST" duration-ms="9225" status="PASS">
+        <test-method is-config="true" signature="quitBrowser()[pri:0, instance:com.mobileTest.LoginTest@66f57048]" started-at="2022-07-14T15:44:22 IST" name="quitBrowser" finished-at="2022-07-14T15:44:23 IST" duration-ms="303" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitBrowser -->
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.mobileTest.LoginTest@66f57048]" started-at="2022-07-14T15:44:23 IST" name="setup" finished-at="2022-07-14T15:44:31 IST" duration-ms="8390" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="validateValidLogin()[pri:3, instance:com.mobileTest.LoginTest@66f57048]" started-at="2022-07-14T15:44:31 IST" name="validateValidLogin" finished-at="2022-07-14T15:44:37 IST" duration-ms="5855" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateValidLogin -->
+        <test-method is-config="true" signature="quitBrowser()[pri:0, instance:com.mobileTest.LoginTest@66f57048]" started-at="2022-07-14T15:44:37 IST" name="quitBrowser" finished-at="2022-07-14T15:44:37 IST" duration-ms="324" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitBrowser -->
       </class> <!-- com.mobileTest.LoginTest -->
     </test> <!-- Mobile Sevice -->
   </suite> <!-- Suite -->
